@@ -4,10 +4,9 @@ import './navbar.js';
 import * as ReactBootStrap from 'react-bootstrap';
 
 export default class App extends Component {
+
   state = {
-    // loading: true,
     teams: []
-    // strAlternate: {''}
   };
 
   async componentDidMount() {
@@ -17,19 +16,10 @@ export default class App extends Component {
         console.log(data.teams)
         this.setState({ teams: data.teams })
       });
-    //  .then(data => console.log(data.teams[1].strTeam));
   }
 
 
   render() {
-
-    // if (this.state.loading) {
-    //   return <div>Loading..</div>;
-    // }
-
-    // if (!this.state.teams.length) {
-    //   return <div>didn't get a team</div>;
-    // }
 
     return (
       <div className="App">
@@ -64,14 +54,24 @@ export default class App extends Component {
           {this.state.teams.map(team => (
 
             <ol class="teams">
+
               <img class="Icon"
+
                 src={team.strTeamBadge}
+
                 alt="Icon"></img>
-              {team.strTeam} </ol>
+
+              <button variant="primary" size="lg" block>{team.strTeam} </button></ol>
 
           ))
           }
         </list >
+        {/* <Layout>
+          <Switch>
+            <Route path="/" compomnent={ } />
+            <Route path=""
+          </Switch>
+        </Layout> */}
       </div >
     );
   }
