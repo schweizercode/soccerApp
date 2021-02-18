@@ -31,14 +31,14 @@ export default class App extends Component {
     // }
 
     return (
-      <table>
-        <th> Teams</th>
+      <list class="list">
+        <h1> Teams</h1>
         {this.state.teams.map(team => (
-          <tr>{team.strTeam} <img src={team.strTeamBadge} alt="Icon"></img></tr>
+          <ol><img class="Icon" src={team.strTeamBadge} alt="Icon"></img>{team.strTeam} </ol>
 
         ))
         }
-      </table >
+      </list >
     );
   }
 

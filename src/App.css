@@ -39,6 +39,12 @@
 }
 
 .Icon {
-  width: 25px;
-  height: ;
+  width: 30px;
+  align-items: left;
+
+}
+
+.list {
+  text-align: center;
+  font: bold;
 }
