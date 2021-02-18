@@ -4,33 +4,47 @@ import './App.css';
 
 export default class App extends Component {
   state = {
-    loading: true,
+    // loading: true,
     teams: []
-    // strAlternate: { ''}
+    // strAlternate: {''}
   };
 
   async componentDidMount() {
     fetch('https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?s=Soccer&c=Germany')
       .then(response => response.json())
-      .then(data => console.log(data));
+      .then(data => {
+        console.log(data.teams)
+        this.setState({ teams: data.teams })
+      });
+    //  .then(data => console.log(data.teams[1].strTeam));
   }
 
 
   render() {
 
-    if (this.state.loading) {
-      return <div>Loading..</div>;
-    }
+    // if (this.state.loading) {
+    //   return <div>Loading..</div>;
+    // }
 
-    if (!this.state.teams.length) {
-      return <div>didn't get a team</div>;
-    }
+    // if (!this.state.teams.length) {
+    //   return <div>didn't get a team</div>;
+    // }
 
     return (
-      <div>
-        <div>{this.state.teams.name.title}</div>
-        <div>{this.state.teams.name.title}</div>
-      </div>
+      <table>
+        <th> Teams</th>
+        {this.state.teams.map(team => (
+          <tr>{team.strTeam}</tr>
+
+        ))
+        }
+
+        {
+          this.state.teams.map(team => (
+            <tr img src="{team.strTeamBadge}">Team icon</tr>
+          ))
+        }
+      </table >
     );
   }
 
