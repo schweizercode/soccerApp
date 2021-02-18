@@ -34,15 +34,9 @@ export default class App extends Component {
       <table>
         <th> Teams</th>
         {this.state.teams.map(team => (
-          <tr>{team.strTeam}</tr>
+          <tr>{team.strTeam} <img src={team.strTeamBadge} alt="Icon"></img></tr>
 
         ))
-        }
-
-        {
-          this.state.teams.map(team => (
-            <tr img src="{team.strTeamBadge}">Team icon</tr>
-          ))
         }
       </table >
     );
