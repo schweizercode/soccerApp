@@ -40,11 +40,7 @@
 
 .Icon {
   width: 30px;
-  align-items: left;
+  margin-right: 15px;
+  margin-bottom: 5px;
 
-}
-
-.list {
-  text-align: center;
-  font: bold;
 }

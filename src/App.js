@@ -49,23 +49,30 @@ export default class App extends Component {
               </ReactBootStrap.NavDropdown>
             </ReactBootStrap.Nav>
             <ReactBootStrap.Nav>
-              <ReactBootStrap.Nav.Link href="#contact">Contact</ReactBootStrap.Nav.Link>
-              <ReactBootStrap.Nav.Link eventKey={2} href="#chat">
-                Chat
+              <ReactBootStrap.Nav.Link href="#chat">Chat</ReactBootStrap.Nav.Link>
+              <ReactBootStrap.Nav.Link eventKey={2} href="#contact">
+                Contact
       </ReactBootStrap.Nav.Link>
             </ReactBootStrap.Nav>
           </ReactBootStrap.Navbar.Collapse>
         </ReactBootStrap.Navbar>
 
         <list class="list">
+
           <h1> Teams</h1>
+
           {this.state.teams.map(team => (
-            <ol><img class="Icon" src={team.strTeamBadge} alt="Icon"></img>{team.strTeam} </ol>
+
+            <ol class="teams">
+              <img class="Icon"
+                src={team.strTeamBadge}
+                alt="Icon"></img>
+              {team.strTeam} </ol>
 
           ))
           }
         </list >
-      </div>
+      </div >
     );
   }
 
