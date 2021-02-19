@@ -27,7 +27,11 @@ function Description() {
         <div className="Description">
             {/* <h2>{idTeam}</h2> */}
             {team && <h2> {team.strAlternate}</h2>}
-        </div>
+            {team && <img src={team.strTeamBadge} alt="Icon" ></img>}
+            { team && <p> {team.strDescriptionEN}</p>}
+            { team && <h4> {team.strLeague}</h4>}
+
+        </div >
     );
 }
 
