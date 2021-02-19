@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import Nav from './Nav.js';
-import About from './About';
-import description from './description';
+import Teamlist from './Teamlist.js';
+import Description from './Description.js';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 export default class App extends Component {
@@ -23,16 +29,20 @@ export default class App extends Component {
 
     return (
       <div className="App">
-        <Nav />
-        <About />
-        <description />
-
-        {/* <Layout>
+        <Router>
+          <Nav />
           <Switch>
-            <Route path="/" compomnent={ } />
-            <Route path=""
+
+            <Route exact path="/teams">
+              <Teamlist teams={this.state.teams} />
+
+            </Route>
+            {/* 6 add a url link when clicking on a character and define a route handling the name as URL parameter */}
+            <Route exact path="/teams/:idTeam">
+              <Description />
+            </Route>
           </Switch>
-        </Layout> */}
+        </Router>
       </div >
     );
   }

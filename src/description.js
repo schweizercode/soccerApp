@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import { useParams } from 'react-router-dom';
 
-function description() {
+
+function Description() {
+    const { idTeam } = useParams()
+
+    const [team, setTeam] = useState(null)
+
+    useEffect(() => {
+        const fetchDetail = () => {
+            fetch(`https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${idTeam}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data.teams[0])
+                    setTeam(data.teams[0])
+                });
+        }
+        fetchDetail()
+
+    }, [])
+
+
+
     return (
-        <div className="description">
-            <h2>Team Description</h2>
+        <div className="Description">
+            {/* <h2>{idTeam}</h2> */}
+            {team && <h2> {team.strAlternate}</h2>}
         </div>
     );
 }
 
-export default description;
+
+export default Description;
