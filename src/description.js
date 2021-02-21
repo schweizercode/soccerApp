@@ -31,7 +31,7 @@ function Description() {
             { team && <p> {team.strDescriptionEN}</p>}
             { team && <h4> League: {team.strLeague}</h4>}
             { team && <h4> Formed Year: {team.intFormedYear}</h4>}
-            { team && <h4> Stadium {team.strStadium}</h4>}
+            { team && <h4> Stadium: {team.strStadium}</h4>}
 
         </div >
     );
