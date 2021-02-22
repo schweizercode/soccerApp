@@ -35,10 +35,10 @@ export default class App extends Component {
 
             <Route exact path="/teams">
               <Teamlist teams={this.state.teams} />
-
             </Route>
             {/* 6 add a url link when clicking on a character and define a route handling the name as URL parameter */}
             <Route exact path="/teams/:idTeam">
+
               <Description />
             </Route>
           </Switch>

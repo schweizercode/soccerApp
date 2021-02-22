@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Link } from 'react-router-dom';
+import { Button, Card } from 'react-bootstrap';
 
 
 function Teamlist({ teams }) {
@@ -10,28 +11,42 @@ function Teamlist({ teams }) {
 
             <h1> Club Overview</h1>
 
-            <div class="cards">
+            <Card class="main" >
+                <div class="clubs-page">
 
-                {teams && teams.map(team => (
+                    {teams && teams.map(team => (
 
-                    <Link to={`/teams/${team.idTeam}`}>
+                        <div class="clubtitle">
 
-                        <div class="teamlist-page container">
+                            <Link to={`/teams/${team.idTeam}`}>
+
+                                <div class="team-card">
+
+                                    <div class="Icon">
+
+                                        <img class="Icon"
+                                            src={team.strTeamBadge}
+                                            alt="Icon">
+                                        </img>
+                                    </div>
+
+                                    <div class="Stadium"> {team.strStadium}</div>
+
+                                    <div className="Teambutton">
+                                        <button variant="primary" size="lg" bg="dark" block>
+                                            {team.strTeam}
+                                        </button>
+                                    </div>
+                                </div>
 
 
-                            <img class="Icon"
-
-                                src={team.strTeamBadge}
-
-                                alt="Icon"></img>
-
-                            <button variant="primary" size="lg" bg="dark" block>{team.strTeam} </button>
+                            </Link>
                         </div>
-                    </Link>
-                ))
-                }
-            </div>
-        </div>
+                    ))
+                    }
+                </div>
+            </Card>
+        </div >
 
     );
 }

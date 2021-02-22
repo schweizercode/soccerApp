@@ -29,7 +29,7 @@ function Description() {
             {team && <h2> {team.strAlternate}</h2>}
             {team && <img src={team.strTeamBadge} alt="Teambadge" ></img>}
             { team && <p> {team.strDescriptionEN}</p>}
-            { team && <h4> League: {team.strLeague}</h4>}
+            { team && <h4> current League: {team.strLeague}</h4>}
             { team && <h4> Formed Year: {team.intFormedYear}</h4>}
             { team && <h4> Stadium: {team.strStadium}</h4>}
 
