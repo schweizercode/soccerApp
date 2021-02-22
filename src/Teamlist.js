@@ -7,6 +7,7 @@ import { Button, Card, Col, Row } from 'react-bootstrap';
 const cardstyle = {
     display: "flex",
     flexDirection: "row",
+    backgroundColor: "#bfc9ca  ",
 }
 
 const columstyle = {
@@ -18,11 +19,48 @@ const rowstyle = {
     marginRight: "8px",
 }
 
+const textstyleteam = {
+    fontFamily: "DFLWeb,Arial,sans-serif",
+    fontSize: "16px",
+    justifyContent: "flex-start",
+    fontWeight: "650",
+    textAlign: "left",
+    alignItems: "center",
+    color: "black",
+}
+
+const textstylestadium = {
+    fontFamily: "DFLWeb,Arial,sans-serif",
+    fontSize: "12px",
+    justifyContent: "flex-start",
+    fontWeight: "450",
+    // textAlign: "left",
+    alignItems: "center",
+    color: "black",
+    marginTop: "10px",
+}
+
+const textstyleheader = {
+    fontFamily: "DFLWeb,Arial,sans-serif",
+    fontSize: "24px",
+    lineHeight: "28px",
+    fontWeight: "400",
+    // marginTop: "39px",
+    paddingTop: "39px",
+    paddingLeft: "15px",
+    textAlign: "left",
+}
+
 function Teamlist({ teams }) {
     return (
-        <div>
-            <h2> Club Overview | Season 2020-2021</h2>
+        <div style={{ backgroundColor: '#e5e5e5' }}>
+
+            <h2 style={textstyleheader}>
+                Club Overview | Season 2020-2021
+                </h2>
+
             <Row style={rowstyle}>
+
                 {teams && teams.map(team => (
                     <Col style={columstyle}
                         xs={12} md={6} lg={4}
@@ -34,11 +72,19 @@ function Teamlist({ teams }) {
 
                                 <div style={{ width: '80%' }}>
 
-                                    <Button variant="link" size="lg">
+                                    <Button
+                                        style={textstyleteam}
+                                        variant="link"
+                                        size="lg">
                                         {team.strTeam}
+
+
+                                        <Card.Text
+                                            style={textstylestadium}>
+                                            {team.strStadium}
+                                        </Card.Text>
                                     </Button>
 
-                                    <Card.Text>{team.strStadium}</Card.Text>
                                 </div>
 
                                 <Card.Img

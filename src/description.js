@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { useParams } from 'react-router-dom';
-
+import { Card } from 'react-bootstrap';
 
 function Description() {
     const { idTeam } = useParams()
@@ -21,18 +21,21 @@ function Description() {
 
     }, [])
 
+    // const Cardtext = {
+    //     fontSize: "16px",
+    // }
 
     return (
-        <div className="Description">
+        <Card>
+            <Card.Img
+                src={team.strTeamBadge}
+                style={{ width: '15%' }}>
 
-            {team && <h2> {team.strAlternate}</h2>}
-            {team && <img src={team.strTeamBadge} alt="Teambadge" ></img>}
-            { team && <p> {team.strDescriptionEN}</p>}
-            { team && <h4> current League: {team.strLeague}</h4>}
-            { team && <h4> Formed Year: {team.intFormedYear}</h4>}
-            { team && <h4> Stadium: {team.strStadium}</h4>}
+            </Card.Img>
 
-        </div >
+
+
+        </Card>
     );
 }
 
