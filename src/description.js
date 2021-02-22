@@ -22,10 +22,9 @@ function Description() {
     }, [])
 
 
-
     return (
         <div className="Description">
-            {/* <h2>{idTeam}</h2> */}
+
             {team && <h2> {team.strAlternate}</h2>}
             {team && <img src={team.strTeamBadge} alt="Teambadge" ></img>}
             { team && <p> {team.strDescriptionEN}</p>}

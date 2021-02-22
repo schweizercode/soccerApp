@@ -28,11 +28,13 @@ export default class App extends Component {
   render() {
 
     return (
-      <div className="App">
-        <Router>
+
+      <Router>
+
+        <div className="App">
+
           <Nav />
           <Switch>
-
             <Route exact path="/teams">
               <Teamlist teams={this.state.teams} />
             </Route>
@@ -42,8 +44,10 @@ export default class App extends Component {
               <Description />
             </Route>
           </Switch>
-        </Router>
-      </div >
+
+        </div >
+
+      </Router>
     );
   }
 

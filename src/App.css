@@ -6,29 +6,17 @@
   width: 30px;
   margin-right: 15px;
   margin-bottom: 5px;
-  justify-content: left;
+  /* justify-content: center; */
 
 }
 
-.Teambadge {
-  width: 70px;
-}
-
-.clubs-page {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 30px;
-
-
-}
 
 .team-card {
   display: blockl;
-  padding-top: 25px;
-  padding-right: 25px;
-  padding-bottom: 25px;
   display: block;
-  background-color: grey;
+  border-width: 1px;
+  border: 1px solid black;
+  max-width: 100%;
 }
 
 .clubtitle {
@@ -39,6 +27,10 @@
 .card {
   display: flex;
   flex-wrap: wrap;
+}
+
+.Teambutton {
+  justify-content: flex-start;
 }
 
 .Icon {

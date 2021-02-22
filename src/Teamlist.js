@@ -1,51 +1,59 @@
 import React from 'react';
 import './App.css';
 import { Link } from 'react-router-dom';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, Col, Row } from 'react-bootstrap';
 
+
+const cardstyle = {
+    display: "flex",
+    flexDirection: "row",
+}
+
+const columstyle = {
+    padding: "8px",
+}
+
+const rowstyle = {
+    marginLeft: "8px",
+    marginRight: "8px",
+}
 
 function Teamlist({ teams }) {
     return (
-        <div class="container-fluid">
+        <div>
+            <h2> Club Overview | Season 2020-2021</h2>
+            <Row style={rowstyle}>
+                {teams && teams.map(team => (
+                    <Col style={columstyle}
+                        xs={12} md={6} lg={4}
+                        key={team.idTeam}>
 
+                        <Link to={`/teams/${team.idTeam}`}>
 
-            <h1> Club Overview</h1>
+                            <Card style={cardstyle}>
 
-            <Card class="main" >
-                <div class="clubs-page">
+                                <div style={{ width: '80%' }}>
 
-                    {teams && teams.map(team => (
+                                    <Button variant="link" size="lg">
+                                        {team.strTeam}
+                                    </Button>
 
-                        <div class="clubtitle">
-
-                            <Link to={`/teams/${team.idTeam}`}>
-
-                                <div class="team-card">
-
-                                    <div class="Icon">
-
-                                        <img class="Icon"
-                                            src={team.strTeamBadge}
-                                            alt="Icon">
-                                        </img>
-                                    </div>
-
-                                    <div class="Stadium"> {team.strStadium}</div>
-
-                                    <div className="Teambutton">
-                                        <button variant="primary" size="lg" bg="dark" block>
-                                            {team.strTeam}
-                                        </button>
-                                    </div>
+                                    <Card.Text>{team.strStadium}</Card.Text>
                                 </div>
 
+                                <Card.Img
+                                    src={team.strTeamBadge}
+                                    alt="Icon"
+                                    style={{ width: '20%' }}>
+                                </Card.Img>
 
-                            </Link>
-                        </div>
-                    ))
-                    }
-                </div>
-            </Card>
+                            </Card>
+
+                        </Link>
+                    </Col>
+                ))
+                }
+            </Row>
         </div >
 
     );
