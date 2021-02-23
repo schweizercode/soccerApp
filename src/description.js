@@ -26,16 +26,21 @@ function Description() {
     // }
 
     return (
+        // <Link to={`/Teamslist/${team.idTeam}`}>
+        //     <Button> Return</Button>
+        // </Link>
+
         <Card>
             <Card.Img
                 src={team.strTeamBadge}
+                alt="Icon"
                 style={{ width: '15%' }}>
 
             </Card.Img>
 
 
 
-        </Card>
+        </Card >
     );
 }
 
