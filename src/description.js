@@ -26,38 +26,35 @@ function Description() {
     }, [])
 
     const flexcontainerstyle = {
-
+        display: 'flex',
+        flexDirection: 'row',
     }
 
     const flexitemcardstyle = {
-        display: 'flex'
+        textAlign: 'center',
+        alignItems: 'center',
 
     }
 
     const returnbuttonstyle = {
-        width: '10%',
-        height: '5%',
+        fontSize: '28px',
+        marginTop: '2%',
+        marginLeft: '2%',
+        marginBottom: '2%',
         color: 'grey',
-        marginTop: '15px',
-        marginLeft: '35px',
     }
 
 
-
     return (
-        // <Link to={`/Teamslist/${team.idTeam}`}>
-        //     <Button> Return</Button>
-        // </Link>
+
         <div
             style=
             {{ flexcontainerstyle }}>
 
             { loading === true ? (<p>Loading..</p>) : (
 
-                <div
-                    style=
-                    {{ flexitemcardstyle }}>
 
+                <div>
                     <Link to={`/teams/`}>
                         <BsChevronDoubleLeft
                             style={returnbuttonstyle} />
@@ -67,7 +64,7 @@ function Description() {
                     <Card style={flexitemcardstyle}>
                         <Card.Img
                             src={team.strTeamBadge}
-                            alt="Icon"
+                            // alt="Icon"
                             style={{ width: '15%' }}>
                         </Card.Img>
 

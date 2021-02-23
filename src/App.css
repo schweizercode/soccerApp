@@ -2,12 +2,12 @@
   width: 30px;
   margin-right: 15px;
   margin-bottom: 5px;
-  /* justify-content: center; */
+  display: inline;
+
 
 }
 
 .team-card {
-  display: blockl;
   display: block;
   border-width: 1px;
   border: 1px solid black;
@@ -19,15 +19,11 @@
   display: block;
 }
 
-.card {
+/* .card {
   display: flex;
   flex-wrap: wrap;
-}
+} */
 
 .Teambutton {
   justify-content: flex-start;
-}
-
-.Icon {
-  display: inline;
 }
