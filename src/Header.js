@@ -3,14 +3,16 @@ import './App.css';
 import { GiSoccerKick } from "react-icons/gi";
 
 const styleheader = {
-    fontSize: "25px",
+    display: 'flex',
+    fontSize: "150%",
     paddingTop: "8px",
     paddingBottom: "8px",
-    paddingLeft: "188px",
+    paddingLeft: "8%",
 }
 
 function Header() {
     return (
+
 
         <div>
             <h2 style={styleheader}>
