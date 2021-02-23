@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Nav from './Nav.js';
+import Header from './Header.js'
 import Teamlist from './Teamlist.js';
 import Description from './Description.js';
 import {
@@ -32,7 +33,7 @@ export default class App extends Component {
       <Router>
 
         <div className="App">
-
+          <Header />
           <Nav />
           <Switch>
             <Route exact path="/teams">
