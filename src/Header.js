@@ -2,32 +2,48 @@ import React from 'react';
 import './App.css';
 import { GiSoccerKick } from "react-icons/gi";
 
-const styleheadline = {
+const headercontainer = {
     display: 'flex',
-    fontSize: "130%",
-    padding: '0.2%',
-    paddingLeft: "8%",
     flexDirection: 'row',
-    // justifyContent: 'space-around',
+    justifyContent: 'space-between',
+}
+const flexitems = {
+    flexWrap: 'wrap',
+}
+
+const headerlogo = {
+
+}
+
+const styleheadline = {
+
+    // fontSize: "120%",
+    // padding: '0.2%',
+    // paddingLeft: "8%",
+
+
 }
 
 const stylelinks = {
-    display: 'flex',
-    alignSelf: 'stretch',
-    justifyContent: 'left',
-    paddingRight: '8%',
+    // display: 'flex',
+    // alignSelf: 'stretch',
+    // justifyContent: 'right',
+    // paddingRight: '8%',
 }
 
 function Header() {
     return (
 
+        <div style={headercontainer}>
 
-        <div style={styleheadline}>
+            <div style={headerlogo}>
+                <a > <GiSoccerKick /></a>
+            </div>
 
-            <h2
-            >
-                <GiSoccerKick />
-            Soccer League Germany</h2>
+            <div>
+                <h2> Soccer League Germany</h2>
+            </div>
+
             <div
                 style={stylelinks}>
                 <a> Soccer League</a>
@@ -35,8 +51,8 @@ function Header() {
                 <a> Virtual League</a>
                 <a> DFL</a>
             </div>
-        </div >
 
+        </div>
 
     )
 }
