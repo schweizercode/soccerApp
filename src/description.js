@@ -76,7 +76,6 @@ function Description() {
                             <h4> Stadium: {team.strStadium}</h4>
                             <a> <Button href='{strFacebook}' onClick={() => {
                                 window.open({} >
-
                                     '_blank' // <- opens the link in a new tab or window.
                                 );
                             }} > <ImFacebook /></Button> </a>
