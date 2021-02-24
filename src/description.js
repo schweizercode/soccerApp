@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { useParams, Link } from 'react-router-dom';
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 import { BsChevronDoubleLeft } from "react-icons/bs";
 import { ImFacebook } from "react-icons/im";
 
@@ -74,7 +74,12 @@ function Description() {
                             <h4> Current League: {team.strLeague}</h4>
                             <h4> Formed Year: {team.intFormedYear}</h4>
                             <h4> Stadium: {team.strStadium}</h4>
-                            {/* <ImFacebook <a href='{team.strFacebook}'> </a> </ImFacebook> */}
+                            <a> <Button href='{strFacebook}' onClick={() => {
+                                window.open({} >
+
+                                    '_blank' // <- opens the link in a new tab or window.
+                                );
+                            }} > <ImFacebook /></Button> </a>
 
                         </Card.Text>
 

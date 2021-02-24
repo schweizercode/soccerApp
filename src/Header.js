@@ -4,10 +4,12 @@ import { GiSoccerKick } from "react-icons/gi";
 
 const styleheader = {
     display: 'flex',
-    fontSize: "150%",
-    paddingTop: "8px",
-    paddingBottom: "8px",
+    fontSize: "130%",
+    padding: '0.2%',
     paddingLeft: "8%",
+    flexDirection: 'row',
+    // justifyContent: 'space-around',
+
 }
 
 function Header() {
@@ -15,11 +17,12 @@ function Header() {
 
 
         <div>
-            <h2 style={styleheader}>
+
+            <h2
+                style={styleheader}>
                 <GiSoccerKick />
             Soccer League Germany</h2>
         </div >
-
 
     )
 }
