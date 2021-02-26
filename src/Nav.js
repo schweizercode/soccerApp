@@ -18,7 +18,7 @@ function Nav() {
                     <ReactBootStrap.Nav>
                         <ReactBootStrap.Nav.Link href="#chat">Contact</ReactBootStrap.Nav.Link>
 
-                        <ReactBootStrap.DropdownButton menuAlign="right" title="User" id="dropdown-menu-align-right" style={{ btnPrimary: 'grey', }}>
+                        <ReactBootStrap.DropdownButton menuAlign="right" title="User" id="dropdown-menu-align-right">
                             <ReactBootStrap.NavDropdown.Item href="#action/3.1">My Account</ReactBootStrap.NavDropdown.Item>
                             <ReactBootStrap.NavDropdown.Item href="#action/3.2">Another action</ReactBootStrap.NavDropdown.Item>
                             <ReactBootStrap.NavDropdown.Item href="#action/3.3">Something</ReactBootStrap.NavDropdown.Item>

@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import Table from 'react-bootstrap/Table'
 
-
-function Table({ idLeague }) {
+function League({ idLeague }) {
 
     console.log(idLeague)
-    const [table, setTable] = useState(null)
+    const [league, setLeague] = useState(null)
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         const fetchDetail = () => {
             fetch(`https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=${idLeague.toString()}&s=2020-2021`)
                 .then(response => response.json())
-                .then(result => setTable(result.table))
+                .then(result => setLeague(result.table))
                 .catch(error => console.log('error', error));
         }
 
@@ -28,20 +28,36 @@ function Table({ idLeague }) {
 
     return (
 
-        <div>
-            <table>
+        <Table striped bordered hover variant="dark">
 
-                {table && table.map(team => (
-                    <tr>
-                        <td>{team.intRank}</td>
-                        <td>{team.strTeam}</td>
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th> Team</th>
+                    <th> Int Played</th>
+                    <th> Int Win</th>
+                    <th> Int Loss</th>
+                    <th> Int Points</th>
+
+                </tr>
+            </thead>
+
+            {league && league.map(team => (
+                <tr>
+                    <td>{team.intRank}</td>
+                    <td>{team.strTeam}</td>
+                    <td>{team.intPlayed}</td>
+                    <td>{team.intWin}</td>
+                    <td>{team.intLoss}</td>
+                    <td>{team.intPoints}</td>
 
 
-                    </tr>))}
+                </tr>))}
 
-            </table>
-        </div>
+
+
+        </Table>
     )
 }
 
-export default Table;
+export default League;

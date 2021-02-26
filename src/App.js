@@ -4,7 +4,7 @@ import Nav from './Nav.js';
 import Header from './Header.js'
 import Teamlist from './Teamlist.js';
 import Description from './Description.js';
-import Table from './Table.js';
+
 import {
   BrowserRouter as Router,
   Switch,
