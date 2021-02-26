@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { useParams, Link } from 'react-router-dom';
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { BsChevronDoubleLeft } from "react-icons/bs";
-import { ImFacebook } from "react-icons/im";
+import { GrInstagram, GrTwitter, GrFacebookOption } from "react-icons/gr";
+import Table from './Table.js';
 
 function Description() {
     const { idTeam } = useParams()
@@ -26,18 +27,23 @@ function Description() {
     }, [])
 
     const flexcontainerstyle = {
-        display: 'flex',
+        // display: 'flex',
         flexDirection: 'row',
+
     }
 
     const flexitemcardstyle = {
         textAlign: 'center',
         alignItems: 'center',
+        backgroundColor: 'rgba(68, 66, 64, 0.09)',
+        marginLeft: '10%',
+        marginRight: '10%',
+
 
     }
 
     const returnbuttonstyle = {
-        fontSize: '28px',
+        // fontSize: '28px',
         marginTop: '2%',
         marginLeft: '2%',
         marginBottom: '2%',
@@ -62,6 +68,13 @@ function Description() {
 
 
                     <Card style={flexitemcardstyle}>
+
+                        <Card.Header>
+                            <h4 style={{
+                                // backgroundColor: 'rgb(220, 218, 219)'
+                            }}> {team.strAlternate} </h4>
+                        </Card.Header>
+
                         <Card.Img
                             src={team.strTeamBadge}
                             // alt="Icon"
@@ -69,18 +82,36 @@ function Description() {
                         </Card.Img>
 
                         <Card.Text>
-                            <h3> {team.strAlternate} </h3>
-                            <p> {team.strDescriptionEN}</p>
-                            <h4> Current League: {team.strLeague}</h4>
-                            <h4> Formed Year: {team.intFormedYear}</h4>
-                            <h4> Stadium: {team.strStadium}</h4>
-                            <Button onClick={() => {
-                                window.location.replace(team.strFacebook, "_blank")
-                            }} > <ImFacebook /></Button>
+                            <p style={{
+                                backgroundColor: 'rgb(220, 218, 219)'
+                            }}> {team.strDescriptionEN}</p>
+
+
+                            <h4 > Current League: {team.strLeague}</h4>
+
+                            <h4 style={{ backgroundColor: 'rgb(220, 218, 219)' }}> Formed Year: {team.intFormedYear}</h4>
+
+                            <h4 > Stadium: {team.strStadium}</h4>
+
+                            <Link to={{ pathname: `https://${team.strFacebook}` }} target="_blank" >
+                                <GrFacebookOption />
+                            </Link>
+
+                            <Link to={{ pathname: `https://${team.strInstagram}` }} target="_blank" >
+                                <GrInstagram />
+                            </Link>
+                            <Link to={{ pathname: `https://${team.strTwitter}` }} target="_blank" >
+                                <GrTwitter />
+                            </Link>
 
                         </Card.Text>
 
                     </Card >
+
+                    <Table idLeague={team.idLeague}>
+
+
+                    </Table>
                 </div>
             )
             }

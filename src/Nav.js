@@ -6,13 +6,13 @@ function Nav() {
     return (
         <nav>
             <ReactBootStrap.Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <ReactBootStrap.Navbar.Brand href="#home">Club Overview</ReactBootStrap.Navbar.Brand>
+                <ReactBootStrap.Navbar.Brand href="/teams/">Club Overview</ReactBootStrap.Navbar.Brand>
                 <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
                     <ReactBootStrap.Nav className="mr-auto">
-                        <ReactBootStrap.Nav.Link href="#features">Descriptions</ReactBootStrap.Nav.Link>
+                        <ReactBootStrap.Nav.Link href="Descriptions">Descriptions</ReactBootStrap.Nav.Link>
 
-                        <ReactBootStrap.Nav.Link eventKey={2} href="#contact"> Live Chat</ReactBootStrap.Nav.Link>
+                        <ReactBootStrap.Nav.Link eventKey={2} href="LiveChat"> Live Chat</ReactBootStrap.Nav.Link>
                     </ReactBootStrap.Nav>
 
                     <ReactBootStrap.Nav>

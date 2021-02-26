@@ -41,16 +41,13 @@ function Header() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link href="#home">Soccer League</Nav.Link>
-                    <Nav.Link href="#link">Latest Results</Nav.Link>
+                    <Nav.Link href="leaguetable">League Table</Nav.Link>
+                    <Nav.Link href="latestresults">Latest Results</Nav.Link>
                     <Nav.Link href="#link">Virtual League</Nav.Link>
                     <Nav.Link href="#link">DFL</Nav.Link>
 
                 </Nav>
-                <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="outline-success">Search</Button>
-                </Form>
+
             </Navbar.Collapse>
         </Navbar>
     )
