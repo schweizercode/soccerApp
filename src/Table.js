@@ -28,7 +28,11 @@ function League({ idLeague }) {
 
     return (
 
-        <Table striped bordered hover variant="dark">
+        <Table striped bordered hover variant="dark"
+            style={{
+                marginLeft: '10%',
+                marginRight: '10%',
+            }}>
 
             <thead>
                 <tr>

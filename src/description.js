@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { useParams, Link } from 'react-router-dom';
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 import { BsChevronDoubleLeft } from "react-icons/bs";
 import { GrInstagram, GrTwitter, GrFacebookOption } from "react-icons/gr";
 import Table from './Table.js';
+
 
 function Description() {
     const { idTeam } = useParams()
@@ -51,6 +52,8 @@ function Description() {
     }
 
 
+
+
     return (
 
         <div
@@ -69,20 +72,28 @@ function Description() {
 
                     <Card style={flexitemcardstyle}>
 
-                        <Card.Header>
-                            <h4 style={{
-                                // backgroundColor: 'rgb(220, 218, 219)'
-                            }}> {team.strAlternate} </h4>
-                        </Card.Header>
 
-                        <Card.Img
-                            src={team.strTeamBadge}
-                            // alt="Icon"
-                            style={{ width: '15%' }}>
-                        </Card.Img>
+                        <div> {team.strStadium} </div>
+                        <div> {team.strAlternate} </div>
+
+                        <div style={{
+                            boxSizing: 'inherit',
+                        }}>
+                            <Card.Img
+                                src={team.strTeamBadge}
+                                // alt="Icon"
+                                style={{
+                                    height: '100%',
+                                    weight: '100%',
+                                    display: 'inline-block',
+                                }}>
+                            </Card.Img>
+                        </div>
+
+
 
                         <Card.Text>
-                            <p style={{
+                            {/* <p style={{
                                 backgroundColor: 'rgb(220, 218, 219)'
                             }}> {team.strDescriptionEN}</p>
 
@@ -91,20 +102,26 @@ function Description() {
 
                             <h4 style={{ backgroundColor: 'rgb(220, 218, 219)' }}> Formed Year: {team.intFormedYear}</h4>
 
-                            <h4 > Stadium: {team.strStadium}</h4>
+                            <h4 > Stadium: {team.strStadium}</h4> */}
+                            <div>
+                                <Link to={{ pathname: `https://${team.strFacebook}` }} target="_blank" >
+                                    <GrFacebookOption />
+                                </Link>
 
-                            <Link to={{ pathname: `https://${team.strFacebook}` }} target="_blank" >
-                                <GrFacebookOption />
-                            </Link>
-
-                            <Link to={{ pathname: `https://${team.strInstagram}` }} target="_blank" >
-                                <GrInstagram />
-                            </Link>
-                            <Link to={{ pathname: `https://${team.strTwitter}` }} target="_blank" >
-                                <GrTwitter />
-                            </Link>
-
+                                <Link to={{ pathname: `https://${team.strInstagram}` }} target="_blank" >
+                                    <GrInstagram />
+                                </Link>
+                                <Link to={{ pathname: `https://${team.strTwitter}` }} target="_blank" >
+                                    <GrTwitter />
+                                </Link>
+                            </div>
                         </Card.Text>
+                        <nav>
+
+                            <Button> <a>Description</a></Button>
+                            <Button><a>Table</a></Button>
+
+                        </nav>
 
                     </Card >
 
