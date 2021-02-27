@@ -28,15 +28,21 @@ function Description() {
     }, [])
 
     const flexcontainerstyle = {
+        width: '100%',
+        paddingRight: '0',
+        paddingLeft: '0',
+        marginRight: 'auto',
+        marginLeft: 'auto',
         // display: 'flex',
-        flexDirection: 'row',
+        // flexDirection: 'row',
+        // height: '200px',
 
     }
 
     const flexitemcardstyle = {
-        textAlign: 'center',
         alignItems: 'center',
         backgroundColor: 'rgba(68, 66, 64, 0.09)',
+        height: '200px',
         marginLeft: '10%',
         marginRight: '10%',
 
