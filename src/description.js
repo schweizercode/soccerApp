@@ -85,15 +85,17 @@ function Description() {
                         <div style={{
                             boxSizing: 'inherit',
                         }}>
-                            <Card.Img
-                                src={team.strTeamBadge}
-                                // alt="Icon"
-                                style={{
-                                    height: '100%',
-                                    weight: '100%',
-                                    display: 'inline-block',
-                                }}>
-                            </Card.Img>
+                            <div>
+                                <Card.Img
+                                    src={team.strTeamBadge}
+                                    // alt="Icon"
+                                    style={{
+                                        height: '100%',
+                                        weight: '100%',
+                                        display: 'inline-block',
+                                    }}>
+                                </Card.Img>
+                            </div>
                         </div>
 
 
@@ -131,10 +133,10 @@ function Description() {
 
                     </Card >
 
-                    <Table idLeague={team.idLeague}>
+                    {/* <Table idLeague={team.idLeague}>
 
 
-                    </Table>
+                    </Table> */}
                 </div>
             )
             }
