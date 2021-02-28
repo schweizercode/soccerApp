@@ -18,7 +18,7 @@ function Header() {
 
             <Navbar.Collapse id="basic-navbar-nav">
 
-                <Nav className="mr-auto" style={{ textAlign: 'right', paddingLeft: '35%', }}>
+                <Nav className="mr-auto" style={{ paddingLeft: '55%', }}>
                     <Nav.Link href="leaguetable">League Table</Nav.Link>
                     <Nav.Link href="latestresults">Latest Results</Nav.Link>
                     <Nav.Link href="#link">Virtual League</Nav.Link>
