@@ -1,31 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useContext } from 'react';
 import './App.css';
 import { useParams, Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
 import { BsChevronDoubleLeft } from "react-icons/bs";
 import { GrInstagram, GrTwitter, GrFacebookOption } from "react-icons/gr";
 import Table from './Table.js';
+import { SoccerContext } from './context/soccercontext';
 
 
 function Description() {
-    const { idTeam } = useParams()
 
-    const [team, setTeam] = useState(null)
-    const [loading, setLoading] = useState(true)
+    const { idTeam } = useParams()
+    const { team, fetchTeam, loading } = useContext(SoccerContext)
+
 
     useEffect(() => {
-        const fetchDetail = () => {
-            fetch(`https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${idTeam}`)
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data.teams[0])
-                    setTeam(data.teams[0])
-                    setLoading(false)
-                });
-        }
-        fetchDetail()
+        fetchTeam(idTeam)
 
     }, [])
+
 
     const flexcontainerstyle = {
         width: '100%',
@@ -33,10 +26,6 @@ function Description() {
         paddingLeft: '0',
         marginRight: 'auto',
         marginLeft: 'auto',
-        // display: 'flex',
-        // flexDirection: 'row',
-        // height: '200px',
-
     }
 
     const flexitemcardstyle = {
@@ -45,8 +34,6 @@ function Description() {
         height: '200px',
         marginLeft: '10%',
         marginRight: '10%',
-
-
     }
 
     const returnbuttonstyle = {
@@ -58,50 +45,34 @@ function Description() {
     }
 
 
-
-
     return (
 
-        <div
-            style=
-            {{ flexcontainerstyle }}>
+        <div>
+            <div
+                style={{ flexcontainerstyle }}>
+                {loading === true ? (<p>Loading..</p>) : (
 
-            { loading === true ? (<p>Loading..</p>) : (
+                    <div>
+                        <Link to={`/teams/`}>
+                            <BsChevronDoubleLeft style={returnbuttonstyle} />
+                        </Link>
 
-
-                <div>
-                    <Link to={`/teams/`}>
-                        <BsChevronDoubleLeft
-                            style={returnbuttonstyle} />
-                    </Link>
-
-
-                    <Card style={flexitemcardstyle}>
-
-
-                        <div> {team.strStadium} </div>
-                        <div> {team.strAlternate} </div>
-
-                        <div style={{
-                            boxSizing: 'inherit',
-                        }}>
-                            <div>
-                                <Card.Img
-                                    src={team.strTeamBadge}
-                                    // alt="Icon"
-                                    style={{
+                        <Card style={flexitemcardstyle}>
+                            <div> {team.strStadium} </div>
+                            <div> {team.strAlternate} </div>
+                            <div style={{ boxSizing: 'inherit', }}>
+                                <div>
+                                    <Card.Img src={team.strTeamBadge} style={{
                                         height: '100%',
                                         weight: '100%',
                                         display: 'inline-block',
                                     }}>
-                                </Card.Img>
+                                    </Card.Img>
+                                </div>
                             </div>
-                        </div>
 
-
-
-                        <Card.Text>
-                            {/* <p style={{
+                            <Card.Text>
+                                {/* <p style={{
                                 backgroundColor: 'rgb(220, 218, 219)'
                             }}> {team.strDescriptionEN}</p>
 
@@ -111,35 +82,35 @@ function Description() {
                             <h4 style={{ backgroundColor: 'rgb(220, 218, 219)' }}> Formed Year: {team.intFormedYear}</h4>
 
                             <h4 > Stadium: {team.strStadium}</h4> */}
-                            <div>
-                                <Link to={{ pathname: `https://${team.strFacebook}` }} target="_blank" >
-                                    <GrFacebookOption />
-                                </Link>
+                                <div>
+                                    <Link to={{ pathname: `https://${team.strFacebook}` }} target="_blank" >
+                                        <GrFacebookOption />
+                                    </Link>
+                                    <Link to={{ pathname: `https://${team.strInstagram}` }} target="_blank" >
+                                        <GrInstagram />
+                                    </Link>
+                                    <Link to={{ pathname: `https://${team.strTwitter}` }} target="_blank" >
+                                        <GrTwitter />
+                                    </Link>
+                                </div>
+                            </Card.Text>
+                            <nav>
 
-                                <Link to={{ pathname: `https://${team.strInstagram}` }} target="_blank" >
-                                    <GrInstagram />
-                                </Link>
-                                <Link to={{ pathname: `https://${team.strTwitter}` }} target="_blank" >
-                                    <GrTwitter />
-                                </Link>
-                            </div>
-                        </Card.Text>
-                        <nav>
+                                <Button> <a>Description</a></Button>
+                                <Button><a>Table</a></Button>
 
-                            <Button> <a>Description</a></Button>
-                            <Button><a>Table</a></Button>
+                            </nav>
 
-                        </nav>
+                        </Card >
 
-                    </Card >
+                        <div style={{ display: 'flex', }}>
 
-                    {/* <Table idLeague={team.idLeague}>
-
-
-                    </Table> */}
-                </div>
-            )
-            }
+                            <Table idLeague={team.idLeague}> </Table>
+                        </div>
+                    </div>
+                )
+                }
+            </div >
         </div >
 
     );

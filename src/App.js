@@ -4,6 +4,7 @@ import Nav from './Nav.js';
 import Header from './Header.js'
 import Teamlist from './Teamlist.js';
 import Description from './Description.js';
+import { SoccerContextProvider } from './context/soccercontext';
 
 import {
   BrowserRouter as Router,
@@ -32,24 +33,24 @@ export default class App extends Component {
     return (
 
       <Router>
+        <SoccerContextProvider>
+          <div className="App">
+            <Header />
+            <Nav />
+            <Switch>
+              <Route exact path="/teams">
+                <Teamlist teams={this.state.teams} />
+              </Route>
+              {/* 6 add a url link when clicking on a character and define a route handling the name as URL parameter */}
+              <Route exact path="/teams/:idTeam">
 
-        <div className="App">
-          <Header />
-          <Nav />
-          <Switch>
-            <Route exact path="/teams">
-              <Teamlist teams={this.state.teams} />
-            </Route>
-            {/* 6 add a url link when clicking on a character and define a route handling the name as URL parameter */}
-            <Route exact path="/teams/:idTeam">
+                <Description />
 
-              <Description />
+              </Route>
+            </Switch>
 
-            </Route>
-          </Switch>
-
-        </div >
-
+          </div >
+        </SoccerContextProvider>
       </Router>
     );
   }

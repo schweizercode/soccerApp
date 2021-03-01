@@ -15,11 +15,6 @@ function League({ idLeague }) {
                 .catch(error => console.log('error', error));
         }
 
-        // .then(table => {
-        //     console.log(table)
-        //     // setTable(table.League[0])
-        //     setLoading(false)
-        // });
 
         fetchDetail()
 
@@ -32,6 +27,7 @@ function League({ idLeague }) {
             style={{
                 marginLeft: '10%',
                 marginRight: '10%',
+                marginTop: '10%',
             }}>
 
             <thead>
