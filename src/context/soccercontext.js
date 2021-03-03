@@ -42,10 +42,11 @@ export const SoccerContextProvider = ({ children }) => {
     }
 
 
-    const soccer = async () => {
+    const soccerData = async () => {
         setLoading(true)
         const response = await fetch('https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?s=Soccer&c=Germany')
         const data = await response.json()
+        console.log(soccer)
 
     }
 
