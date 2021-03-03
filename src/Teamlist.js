@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import './App.css';
 import { Link } from 'react-router-dom';
 import { Button, Card, Col, Row } from 'react-bootstrap';
+import { SoccerContext } from './context/soccercontext';
 
 
 const cardstyle = {
@@ -50,7 +51,15 @@ const textstyleheader = {
 }
 
 
-function Teamlist({ teams }) {
+function Teamlist() {
+
+    const { soccerData, soccer } = useContext(SoccerContext)
+
+    useEffect(() => {
+        soccerData()
+    }, [])
+
+
     return (
         <div style={{ backgroundColor: '#e5e5e5' }}>
 
@@ -60,7 +69,7 @@ function Teamlist({ teams }) {
 
             <Row style={rowstyle}>
 
-                {teams && teams.map(team => (
+                {soccer && soccer.map(team => (
                     <Col style={columstyle}
                         xs={12} md={6} lg={4}
                         key={team.idTeam}>

@@ -12,6 +12,7 @@ function Description() {
 
     const { idTeam } = useParams()
     const { team, fetchTeam, loading } = useContext(SoccerContext)
+    console.log(team)
 
 
     useEffect(() => {
@@ -56,23 +57,23 @@ function Description() {
                         <Link to={`/teams/`}>
                             <BsChevronDoubleLeft style={returnbuttonstyle} />
                         </Link>
-
-                        <Card style={flexitemcardstyle}>
-                            <div> {team.strStadium} </div>
-                            <div> {team.strAlternate} </div>
-                            <div style={{ boxSizing: 'inherit', }}>
-                                <div>
-                                    <Card.Img src={team.strTeamBadge} style={{
-                                        height: '100%',
-                                        weight: '100%',
-                                        display: 'inline-block',
-                                    }}>
-                                    </Card.Img>
+                        {team &&
+                            <Card style={flexitemcardstyle}>
+                                <div> {team.strStadium} </div>
+                                <div> {team.strAlternate} </div>
+                                <div style={{ boxSizing: 'inherit', }}>
+                                    <div>
+                                        <Card.Img src={team.strTeamBadge} style={{
+                                            height: '100%',
+                                            weight: '100%',
+                                            display: 'inline-block',
+                                        }}>
+                                        </Card.Img>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <Card.Text>
-                                {/* <p style={{
+                                <Card.Text>
+                                    {/* <p style={{
                                 backgroundColor: 'rgb(220, 218, 219)'
                             }}> {team.strDescriptionEN}</p>
 
@@ -82,31 +83,33 @@ function Description() {
                             <h4 style={{ backgroundColor: 'rgb(220, 218, 219)' }}> Formed Year: {team.intFormedYear}</h4>
 
                             <h4 > Stadium: {team.strStadium}</h4> */}
-                                <div>
-                                    <Link to={{ pathname: `https://${team.strFacebook}` }} target="_blank" >
-                                        <GrFacebookOption />
-                                    </Link>
-                                    <Link to={{ pathname: `https://${team.strInstagram}` }} target="_blank" >
-                                        <GrInstagram />
-                                    </Link>
-                                    <Link to={{ pathname: `https://${team.strTwitter}` }} target="_blank" >
-                                        <GrTwitter />
-                                    </Link>
-                                </div>
-                            </Card.Text>
-                            <nav>
+                                    <div>
+                                        <Link to={{ pathname: `https://${team.strFacebook}` }} target="_blank" >
+                                            <GrFacebookOption />
+                                        </Link>
+                                        <Link to={{ pathname: `https://${team.strInstagram}` }} target="_blank" >
+                                            <GrInstagram />
+                                        </Link>
+                                        <Link to={{ pathname: `https://${team.strTwitter}` }} target="_blank" >
+                                            <GrTwitter />
+                                        </Link>
+                                    </div>
+                                </Card.Text>
+                                <nav>
 
-                                <Button> <a>Description</a></Button>
-                                <Button><a>Table</a></Button>
+                                    <Button> <a>Description</a></Button>
+                                    <Button><a>Table</a></Button>
 
-                            </nav>
+                                </nav>
 
-                        </Card >
+                            </Card >
+                        }
+                        {team &&
+                            <div style={{ display: 'flex', }}>
 
-                        <div style={{ display: 'flex', }}>
-
-                            <Table idLeague={team.idLeague}> </Table>
-                        </div>
+                                <Table idLeague={team.idLeague}> </Table>
+                            </div>
+                        }
                     </div>
                 )
                 }

@@ -13,48 +13,34 @@ import {
   // Link
 } from "react-router-dom";
 
+const App = () => {
 
-export default class App extends Component {
-  state = {
-    teams: []
-  };
+  return (
 
-  async componentDidMount() {
-    fetch('https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?s=Soccer&c=Germany')
-      .then(response => response.json())
-      .then(data => {
-        console.log(data.teams)
-        this.setState({ teams: data.teams })
-      });
-  }
+    <Router>
+      <SoccerContextProvider>
+        <div className="App">
+          <Header />
+          <Nav />
+          <Switch>
+            <Route exact path="/teams">
+              <Teamlist />
+            </Route>
+            {/* 6 add a url link when clicking on a character and define a route handling the name as URL parameter */}
+            <Route exact path="/teams/:idTeam">
 
+              <Description />
 
-  render() {
+            </Route>
+          </Switch>
 
-    return (
-
-      <Router>
-        <SoccerContextProvider>
-          <div className="App">
-            <Header />
-            <Nav />
-            <Switch>
-              <Route exact path="/teams">
-                <Teamlist teams={this.state.teams} />
-              </Route>
-              {/* 6 add a url link when clicking on a character and define a route handling the name as URL parameter */}
-              <Route exact path="/teams/:idTeam">
-
-                <Description />
-
-              </Route>
-            </Switch>
-
-          </div >
-        </SoccerContextProvider>
-      </Router>
-    );
-  }
-
+        </div >
+      </SoccerContextProvider>
+    </Router>
+  );
 }
+
+
+export default App;
+
 
