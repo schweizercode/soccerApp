@@ -15,9 +15,7 @@ function League({ idLeague }) {
                 .catch(error => console.log('error', error));
         }
 
-
         fetchDetail()
-
     }, [])
 
 
@@ -38,11 +36,11 @@ function League({ idLeague }) {
                     <th> Int Win</th>
                     <th> Int Loss</th>
                     <th> Int Points</th>
-
                 </tr>
             </thead>
 
             {league && league.map(team => (
+
                 <tr>
                     <td>{team.intRank}</td>
                     <td>{team.strTeam}</td>
@@ -50,12 +48,7 @@ function League({ idLeague }) {
                     <td>{team.intWin}</td>
                     <td>{team.intLoss}</td>
                     <td>{team.intPoints}</td>
-
-
                 </tr>))}
-
-
-
         </Table>
     )
 }

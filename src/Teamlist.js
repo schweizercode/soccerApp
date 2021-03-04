@@ -70,6 +70,7 @@ function Teamlist() {
             <Row style={rowstyle}>
 
                 {soccer && soccer.map(team => (
+
                     <Col style={columstyle}
                         xs={12} md={6} lg={4}
                         key={team.idTeam}>
@@ -79,21 +80,19 @@ function Teamlist() {
                             <Card style={cardstyle}>
 
                                 <div style={{ width: '80%' }}>
-
                                     <Button
                                         style={textstyleteam}
                                         variant="link"
                                         size="lg">
                                         {team.strTeam}
 
-
                                         <Card.Text
                                             style={textstylestadium}>
                                             {team.strStadium}
                                         </Card.Text>
                                     </Button>
-
                                 </div>
+
                                 <div
                                     style={{ width: '20%', padding: '8px', background: 'rgba(0,0,0,.2)' }}>
                                     <Card.Img
@@ -102,9 +101,10 @@ function Teamlist() {
                                         style={{ width: '100%' }}>
                                     </Card.Img>
                                 </div>
-                            </Card>
 
+                            </Card>
                         </Link>
+
                     </Col>
                 ))
                 }
