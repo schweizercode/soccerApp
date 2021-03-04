@@ -5,6 +5,7 @@ import Header from './Header.js'
 import Teamlist from './Teamlist.js';
 import Description from './Description.js';
 import { SoccerContextProvider } from './context/soccercontext';
+import Register from './components/Register'
 
 import {
   BrowserRouter as Router,
@@ -18,6 +19,7 @@ const App = () => {
   return (
 
     <Router>
+      <Register />
       <SoccerContextProvider>
         <div className="App">
           <Header />
