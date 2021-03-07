@@ -3,7 +3,7 @@ import React from "react";
 
 export default class Fetch extends React.Component {
     state = {
-        loading = false
+        loading = true
     };
 
     async componentDidMount() {
