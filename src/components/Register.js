@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { AuthContext } from '././context/authContext'
 
+
 const Register = () => {
     const [state, setState] = useState({ email: "", password: "", name: "" })
 
