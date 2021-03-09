@@ -50,7 +50,7 @@ const textstyleheader = {
     textAlign: "left",
 }
 
-function Teamlist() {
+function Cluboverview() {
 
     const { soccerData, soccer } = useContext(SoccerContext)
 
@@ -113,4 +113,4 @@ function Teamlist() {
     );
 }
 
-export default Teamlist;
+export default Cluboverview;

@@ -104,6 +104,7 @@ function Description() {
 
                             </Card >
                         }
+
                         {team &&
                             <div style={{ display: 'flex', }}>
 
