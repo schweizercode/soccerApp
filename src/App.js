@@ -26,23 +26,9 @@ const App = () => {
           <div className="App">
             <Header />
             <Nav />
+
             <Switch>
-
-              <Route
-                exact path="/">
-
-                <Container
-                  className="d-flex align-items-center justify-content-center" style={{ minHeight: "75vh" }}>
-
-                  <div
-                    className="w-100" styles={{ maxWidth: "400px" }}>
-                    <Route exact path="/register" component={Register}></Route>
-                    <Route exact path="/login" component={Login}></Route>
-                  </div>
-
-                </Container>
-
-              </Route>
+              <Route exact path="/"> </Route>
               <Route exact path="/Cluboverview">
                 <Cluboverview />
               </Route>
@@ -50,6 +36,15 @@ const App = () => {
               <Route exact path="/Teams/:idTeam">
                 <Description />
               </Route>
+              <Container
+                className="d-flex align-items-center justify-content-center" style={{ minHeight: "75vh" }}>
+                <div
+                  className="w-100" styles={{ maxWidth: "400px" }}>
+                  <Route path="/Register" component={Register} />
+                  <Route path="/Login" component={Login} />
+                </div>
+              </Container>
+
 
             </Switch>
 

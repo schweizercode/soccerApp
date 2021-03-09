@@ -30,15 +30,15 @@ function Description() {
     }
 
     const flexitemcardstyle = {
-        alignItems: 'center',
+        alignItems: 'right',
         backgroundColor: 'rgba(68, 66, 64, 0.09)',
-        height: '200px',
+        height: '300px',
         marginLeft: '10%',
         marginRight: '10%',
     }
 
     const returnbuttonstyle = {
-        // fontSize: '28px',
+        fontSize: '28px',
         marginTop: '2%',
         marginLeft: '2%',
         marginBottom: '2%',
@@ -54,63 +54,73 @@ function Description() {
                 {loading === true ? (<p>Loading..</p>) : (
 
                     <div>
-                        <Link to={`/teams/`}>
+                        <Link to={`/Cluboverview/`}>
                             <BsChevronDoubleLeft style={returnbuttonstyle} />
                         </Link>
+
+
                         {team &&
                             <Card style={flexitemcardstyle}>
-                                <div> {team.strStadium} </div>
-                                <div> {team.strAlternate} </div>
-                                <div style={{ boxSizing: 'inherit', }}>
+                                <Card.Header>{team.strStadium}  </Card.Header>
+                                <Card.Body>
                                     <div>
-                                        <Card.Img src={team.strTeamBadge} style={{
-                                            height: '100%',
-                                            weight: '100%',
-                                            display: 'inline-block',
-                                        }}>
+                                        <Card.Title style={{ fontSize: '23px' }}> {team.strAlternate} </Card.Title>
+
+                                        <Card.Img style={{ width: '120px', height: '120px', display: 'block', marginLeft: 'auto', marginRight: '5%' }} src={team.strTeamBadge}>
                                         </Card.Img>
+
                                     </div>
+                                </Card.Body>
+
+                                <div style={{ display: 'column' }}>
+                                    <Card.Body style={{ marginLeft: '3%', justifyContent: 'spaceAround', }}>
+                                        <div>
+                                            <Link to={{ pathname: `https://${team.strFacebook}` }} target="_blank" >
+                                                <GrFacebookOption />
+                                            </Link></div>
+                                        <div>
+                                            <Link to={{ pathname: `https://${team.strInstagram}` }} target="_blank" >
+                                                <GrInstagram />
+                                            </Link></div>
+                                        <div>
+                                            <Link to={{ pathname: `https://${team.strTwitter}` }} target="_blank" >
+                                                <GrTwitter />
+                                            </Link></div>
+                                    </Card.Body>
                                 </div>
 
-                                <Card.Text>
-                                    {/* <p style={{
-                                backgroundColor: 'rgb(220, 218, 219)'
-                            }}> {team.strDescriptionEN}</p>
+                                <div>
+                                    <Button className="w-50 text-center mt-2"> <a>Description</a> </Button>
+                                    <Button className="w-50 text-center mt-2"><a>Table</a></Button>
 
-
-                            <h4 > Current League: {team.strLeague}</h4>
-
-                            <h4 style={{ backgroundColor: 'rgb(220, 218, 219)' }}> Formed Year: {team.intFormedYear}</h4>
-
-                            <h4 > Stadium: {team.strStadium}</h4> */}
-                                    <div>
-                                        <Link to={{ pathname: `https://${team.strFacebook}` }} target="_blank" >
-                                            <GrFacebookOption />
-                                        </Link>
-                                        <Link to={{ pathname: `https://${team.strInstagram}` }} target="_blank" >
-                                            <GrInstagram />
-                                        </Link>
-                                        <Link to={{ pathname: `https://${team.strTwitter}` }} target="_blank" >
-                                            <GrTwitter />
-                                        </Link>
-                                    </div>
-                                </Card.Text>
-                                <nav>
-
-                                    <Button> <a>Description</a></Button>
-                                    <Button><a>Table</a></Button>
-
-                                </nav>
-
+                                </div>
                             </Card >
+
+
+                            /* <Card.Body style={{ paddingTop: '155px' }}>
+                                <p style={{
+                                    backgroundColor: 'rgb(220, 218, 219)'
+                                }}> {team.strDescriptionEN}</p>
+
+
+                                <h4 > Current League: {team.strLeague}</h4>
+
+                                <h4 style={{ backgroundColor: 'rgb(220, 218, 219)' }}> Formed Year: {team.intFormedYear}</h4>
+
+                                <h4 > Stadium: {team.strStadium}</h4>
+
+                            </Card.Body> */
+
+
+
                         }
 
-                        {team &&
+                        {/* {team &&
                             <div style={{ display: 'flex', }}>
 
                                 <Table idLeague={team.idLeague}> </Table>
                             </div>
-                        }
+                        } */}
                     </div>
                 )
                 }
