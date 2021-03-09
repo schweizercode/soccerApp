@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { AuthContext } from '../../context/authContext'
 import { Form, Button, Card } from 'react-bootstrap'
+import { Link } from "react-router-dom"
 
 
 const Register = () => {
@@ -44,8 +45,7 @@ const Register = () => {
                     <Button className="w-100" type="submit">Sign Up</Button>
                 </Form>
 
-                <div className="w-100 text-center mt-2"> Already have an account? Log In</div>
-
+                <div className="w-100 text-center mt-2"> Already have an account? <Link to="/Login"></Link> Log In</div>
             </Card.Body>
         </Card >
     )
