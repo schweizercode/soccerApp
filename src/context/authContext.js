@@ -21,7 +21,6 @@ export const AuthContextProvider = ({ children }) => {
                 // Signed in 
                 var user = userCredential.user;
 
-
                 user.updateProfile({
                     displayName: name,
                 }).then(function () {

@@ -50,7 +50,6 @@ const textstyleheader = {
     textAlign: "left",
 }
 
-
 function Teamlist() {
 
     const { soccerData, soccer } = useContext(SoccerContext)

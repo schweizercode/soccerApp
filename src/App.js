@@ -7,6 +7,7 @@ import Description from './Description.js';
 import { SoccerContextProvider } from './context/soccercontext';
 import Register from './components/auth/Register'
 import { AuthContextProvider } from './context/authContext'
+import { Container } from 'react-bootstrap'
 
 import {
   BrowserRouter as Router,
@@ -26,7 +27,20 @@ const App = () => {
             <Header />
             <Nav />
             <Switch>
-              <Route exact path="/Register"><Register /></Route>
+
+              <Route
+                exact path="/Register">
+
+                <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "75vh" }}>
+
+                  <div
+                    className="w-100" styles={{ maxWidth: "400px" }}>
+                    <Register />
+                  </div>
+
+                </Container>
+
+              </Route>
               <Route exact path="/teams">
                 <Teamlist />
               </Route>
