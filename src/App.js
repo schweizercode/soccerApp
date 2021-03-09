@@ -5,7 +5,8 @@ import Header from './Header.js'
 import Teamlist from './Teamlist.js';
 import Description from './Description.js';
 import { SoccerContextProvider } from './context/soccercontext';
-import Register from './components/Register'
+import Register from './components/auth/Register'
+import { AuthContextProvider } from './context/authContext'
 
 import {
   BrowserRouter as Router,
@@ -19,25 +20,27 @@ const App = () => {
   return (
 
     <Router>
-      <Register />
-      <SoccerContextProvider>
-        <div className="App">
-          <Header />
-          <Nav />
-          <Switch>
-            <Route exact path="/teams">
-              <Teamlist />
-            </Route>
-            {/* 6 add a url link when clicking on a character and define a route handling the name as URL parameter */}
-            <Route exact path="/teams/:idTeam">
+      <AuthContextProvider>
+        <SoccerContextProvider>
+          <div className="App">
+            <Header />
+            <Nav />
+            <Switch>
+              <Route exact path="/Register"><Register /></Route>
+              <Route exact path="/teams">
+                <Teamlist />
+              </Route>
+              {/* 6 add a url link when clicking on a character and define a route handling the name as URL parameter */}
+              <Route exact path="/teams/:idTeam">
 
-              <Description />
+                <Description />
 
-            </Route>
-          </Switch>
+              </Route>
+            </Switch>
 
-        </div >
-      </SoccerContextProvider>
+          </div >
+        </SoccerContextProvider>
+      </AuthContextProvider>
     </Router>
   );
 }

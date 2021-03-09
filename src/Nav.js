@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import * as ReactBootStrap from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function Nav() {
     return (
@@ -16,7 +17,8 @@ function Nav() {
                     </ReactBootStrap.Nav>
 
                     <ReactBootStrap.Nav>
-                        <ReactBootStrap.Nav.Link href="#chat">Contact</ReactBootStrap.Nav.Link>
+
+                        <ReactBootStrap.Nav.Link>  <Link to="/Register">Register</Link> </ReactBootStrap.Nav.Link>
 
                         <ReactBootStrap.DropdownButton menuAlign="right" title="User" id="dropdown-menu-align-right">
                             <ReactBootStrap.NavDropdown.Item href="#action/3.1">My Account</ReactBootStrap.NavDropdown.Item>
