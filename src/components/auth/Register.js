@@ -1,5 +1,5 @@
-import React, { useState, useRef, useContext } from 'react'
-import { AuthProvider } from '../../context/authContext'
+import React, { useState, useRef } from 'react'
+import { useAuth } from '../../'
 import { Form, Button, Card, Alert } from 'react-bootstrap'
 import { Link } from "react-router-dom"
 
@@ -8,7 +8,7 @@ export default function Register() {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
-    const { register } = useContext(AuthProvider)
+    const { register } = useAuth
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
 
@@ -49,7 +49,7 @@ export default function Register() {
 
                     <Form.Group id="password-confirm">
                         <Form.Label>Password Confirmation</Form.Label>
-                        <Form.Control type="passwordconfirm" red={passwordConfirmRef} required></Form.Control>
+                        <Form.Control type="password" red={passwordConfirmRef} required></Form.Control>
                     </Form.Group>
 
 

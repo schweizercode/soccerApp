@@ -47,86 +47,86 @@ function Description() {
 
 
     return (
+        <>
+            <div>
+                <div
+                    style={{ flexcontainerstyle }}>
+                    {loading === true ? (<p>Loading..</p>) : (
 
-        <div>
-            <div
-                style={{ flexcontainerstyle }}>
-                {loading === true ? (<p>Loading..</p>) : (
-
-                    <div>
-                        <Link to={`/Cluboverview/`}>
-                            <BsChevronDoubleLeft style={returnbuttonstyle} />
-                        </Link>
+                        <div>
+                            <Link to={`/Cluboverview/`}>
+                                <BsChevronDoubleLeft style={returnbuttonstyle} />
+                            </Link>
 
 
-                        {team &&
-                            <Card style={flexitemcardstyle}>
-                                <Card.Header>{team.strStadium}  </Card.Header>
-                                <Card.Body>
+                            {team &&
+                                <Card style={flexitemcardstyle}>
+                                    <Card.Header>{team.strStadium}  </Card.Header>
+                                    <Card.Body>
+                                        <div>
+                                            <Card.Title style={{ fontSize: '25px', marginLeft: '3%' }}> {team.strAlternate} </Card.Title>
+
+                                            <Card.Img style={{ width: '120px', height: '120px', display: 'flex', marginLeft: 'auto', marginRight: '5%' }} src={team.strTeamBadge}>
+                                            </Card.Img>
+
+                                        </div>
+                                    </Card.Body>
+
+                                    <div style={{ display: 'column' }}>
+                                        <Card.Body style={{ marginLeft: '1%', justifyContent: 'spaceAround', }}>
+                                            <div>
+                                                <Link to={{ pathname: `https://${team.strFacebook}` }} target="_blank" >
+                                                    <GrFacebookOption />
+                                                </Link></div>
+                                            <div>
+                                                <Link to={{ pathname: `https://${team.strInstagram}` }} target="_blank" >
+                                                    <GrInstagram />
+                                                </Link></div>
+                                            <div>
+                                                <Link to={{ pathname: `https://${team.strTwitter}` }} target="_blank" >
+                                                    <GrTwitter />
+                                                </Link></div>
+                                        </Card.Body>
+                                    </div>
+
                                     <div>
-                                        <Card.Title style={{ fontSize: '23px' }}> {team.strAlternate} </Card.Title>
-
-                                        <Card.Img style={{ width: '120px', height: '120px', display: 'block', marginLeft: 'auto', marginRight: '5%' }} src={team.strTeamBadge}>
-                                        </Card.Img>
+                                        <Button className="w-50 text-center mt-2"> <a>Description</a> </Button>
+                                        <Button className="w-50 text-center mt-2"><a>Table</a></Button>
 
                                     </div>
-                                </Card.Body>
-
-                                <div style={{ display: 'column' }}>
-                                    <Card.Body style={{ marginLeft: '1%', justifyContent: 'spaceAround', }}>
-                                        <div>
-                                            <Link to={{ pathname: `https://${team.strFacebook}` }} target="_blank" >
-                                                <GrFacebookOption />
-                                            </Link></div>
-                                        <div>
-                                            <Link to={{ pathname: `https://${team.strInstagram}` }} target="_blank" >
-                                                <GrInstagram />
-                                            </Link></div>
-                                        <div>
-                                            <Link to={{ pathname: `https://${team.strTwitter}` }} target="_blank" >
-                                                <GrTwitter />
-                                            </Link></div>
-                                    </Card.Body>
-                                </div>
-
-                                <div>
-                                    <Button className="w-50 text-center mt-2"> <a>Description</a> </Button>
-                                    <Button className="w-50 text-center mt-2"><a>Table</a></Button>
-
-                                </div>
-                            </Card >
+                                </Card >
 
 
-                            /* <Card.Body style={{ paddingTop: '155px' }}>
-                                <p style={{
-                                    backgroundColor: 'rgb(220, 218, 219)'
-                                }}> {team.strDescriptionEN}</p>
-
-
-                                <h4 > Current League: {team.strLeague}</h4>
-
-                                <h4 style={{ backgroundColor: 'rgb(220, 218, 219)' }}> Formed Year: {team.intFormedYear}</h4>
-
-                                <h4 > Stadium: {team.strStadium}</h4>
-
-                            </Card.Body> */
+                                /* <Card.Body style={{ paddingTop: '155px' }}>
+                                    <p style={{
+                                        backgroundColor: 'rgb(220, 218, 219)'
+                                    }}> {team.strDescriptionEN}</p>
+    
+    
+                                    <h4 > Current League: {team.strLeague}</h4>
+    
+                                    <h4 style={{ backgroundColor: 'rgb(220, 218, 219)' }}> Formed Year: {team.intFormedYear}</h4>
+    
+                                    <h4 > Stadium: {team.strStadium}</h4>
+    
+                                </Card.Body> 
 
 
 
-                        }
+                            }
 
-                        {/* {team &&
+                            {/* {team &&
                             <div style={{ display: 'flex', }}>
 
                                 <Table idLeague={team.idLeague}> </Table>
                             </div>
                         } */}
-                    </div>
-                )
-                }
+                        </div>
+                    )
+                    }
+                </div >
             </div >
-        </div >
-
+        </>
     );
 }
 
