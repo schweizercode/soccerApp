@@ -18,7 +18,7 @@ function Nav() {
                     </ReactBootStrap.Nav>
 
                     <ReactBootStrap.Nav className="mr-auto" style={{ paddingLeft: '75%', }}>
-                        <ReactBootStrap.Navbar.Brand href="Login"><ImUser></ImUser></ReactBootStrap.Navbar.Brand >
+                        <ReactBootStrap.Navbar.Brand href="/Login"><ImUser></ImUser></ReactBootStrap.Navbar.Brand >
                     </ReactBootStrap.Nav>
 
                 </ReactBootStrap.Navbar.Collapse>

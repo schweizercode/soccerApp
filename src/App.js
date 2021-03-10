@@ -5,7 +5,9 @@ import Description from './Description.js';
 import { SoccerContextProvider } from './context/soccercontext';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
-import { AuthContextProvider } from './context/authContext';
+import ForgotPassword from './components/auth/ForgotPassword';
+import Profile from './components/auth/Profile';
+import { AuthProvider } from './context/authContext';
 import { Container } from 'react-bootstrap';
 import './App.css';
 
@@ -16,20 +18,23 @@ import {
   // Link
 } from "react-router-dom";
 
+
 const App = () => {
 
   return (
 
     <Router>
-      <AuthContextProvider>
+      <AuthProvider>
         <SoccerContextProvider>
           <div className="App">
             <Header />
             <Nav />
 
             <Switch>
-              <Route exact path="/"> </Route>
-              <Route exact path="/Cluboverview">
+              <Route exact path="/">
+                <Cluboverview />
+              </Route>
+              <Route path="/Cluboverview">
                 <Cluboverview />
               </Route>
 
@@ -37,20 +42,20 @@ const App = () => {
                 <Description />
               </Route>
               <Container
-                className="d-flex align-items-center justify-content-center" style={{ minHeight: "75vh" }}>
+                className="d-flex align-items-center justify-content-center" style={{ minHeight: "55vh", maxWidth: "500px" }}>
                 <div
-                  className="w-100" styles={{ maxWidth: "400px" }}>
+                  className="w-100">
                   <Route path="/Register" component={Register} />
                   <Route path="/Login" component={Login} />
+                  <Route path="/forgot-password" component={ForgotPassword} />
+                  <Route path="/Profile" component={Profile} />
                 </div>
               </Container>
-
-
             </Switch>
 
           </div >
         </SoccerContextProvider>
-      </AuthContextProvider>
+      </AuthProvider>
     </Router>
   );
 }

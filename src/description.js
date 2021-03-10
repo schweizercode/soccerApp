@@ -73,7 +73,7 @@ function Description() {
                                 </Card.Body>
 
                                 <div style={{ display: 'column' }}>
-                                    <Card.Body style={{ marginLeft: '3%', justifyContent: 'spaceAround', }}>
+                                    <Card.Body style={{ marginLeft: '1%', justifyContent: 'spaceAround', }}>
                                         <div>
                                             <Link to={{ pathname: `https://${team.strFacebook}` }} target="_blank" >
                                                 <GrFacebookOption />

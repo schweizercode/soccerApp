@@ -1,55 +1,64 @@
-import React, { useState, useContext } from 'react'
-import { AuthContext } from '../../context/authContext'
-import { Form, Button, Card } from 'react-bootstrap'
+import React, { useState, useRef, useContext } from 'react'
+import { AuthProvider } from '../../context/authContext'
+import { Form, Button, Card, Alert } from 'react-bootstrap'
 import { Link } from "react-router-dom"
 
 
-const Register = () => {
-    const [state, setState] = useState({ name: "", email: "", password: "", })
-    const { register } = useContext(AuthContext)
+export default function Register() {
+    const emailRef = useRef()
+    const passwordRef = useRef()
+    const passwordConfirmRef = useRef()
+    const { register } = useContext(AuthProvider)
+    const [error, setError] = useState('')
+    const [loading, setLoading] = useState(false)
 
+    async function handleSubmit(e) {
+        e.preventDefault()
 
-    const handleChange = (e) => {
-        setState({ ...state, [e.target.name]: e.target.value });
-    };
+        if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+            return setError('Passwords do not match')
+        }
 
-    const handleOnSubmit = (event) => {
-        //pervent react from refreshing the page
-        event.preventDefault();
-        register(state)
+        try {
+            setError('')
+            setLoading(true)
+            await register(emailRef.current.value, passwordRef.current.value)
+        } catch {
+            setError('Failed to create an account')
+        }
+        setLoading(false)
     }
 
-    console.log('state', state)
+
     return (
-        <Card onSubmit={handleOnSubmit}>
+        <Card>
             <Card.Body>
                 <h2 className="text-center mb-4">Register</h2>
-                <Form>
-
-                    <Form.Group id="Name">
-                        <Form.Label>Name</Form.Label>
-                        <Form.Control type="text" name="name" onChange={handleChange} value={state.name} required></Form.Control>
-                    </Form.Group>
+                {error && <Alert variant="danger">{error}</Alert>}
+                <Form onSubmit={handleSubmit}>
 
                     <Form.Group id="email">
                         <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" name="email" onChange={handleChange} value={state.email} required></Form.Control>
+                        <Form.Control type="email" ref={emailRef} required></Form.Control>
                     </Form.Group>
 
                     <Form.Group id="password">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" name="password" onChange={handleChange} value={state.password} required></Form.Control>
+                        <Form.Control type="password" red={passwordRef} required></Form.Control>
+                    </Form.Group>
+
+                    <Form.Group id="password-confirm">
+                        <Form.Label>Password Confirmation</Form.Label>
+                        <Form.Control type="passwordconfirm" red={passwordConfirmRef} required></Form.Control>
                     </Form.Group>
 
 
-                    <Button className="w-100" type="submit">Sign Up</Button>
+                    <Button disabled={loading} className="w-100" type="submit">Sign Up</Button>
                 </Form>
 
-                <div className="w-100 text-center mt-2"> Already have an account? <Link to="/Login"></Link> Log In</div>
+                <div className="w-100 text-center mt-2"> Already have an account? <Link to="/Login"> Log In</Link></div>
             </Card.Body>
         </Card >
     )
 }
 
-
-export default Register
