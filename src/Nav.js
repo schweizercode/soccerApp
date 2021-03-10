@@ -3,7 +3,7 @@ import './App.css';
 import * as ReactBootStrap from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { ImUser } from 'react-icons/im'
-import Login from './components/auth/Login';
+import Login from './components/Login';
 
 function Nav() {
     return (
