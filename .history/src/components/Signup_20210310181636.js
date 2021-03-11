@@ -8,7 +8,7 @@ export default function Signup() {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
-    const { signup } = useAuth()
+    const { signup } = useAuth
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
     const history = useHistory()
@@ -16,7 +16,6 @@ export default function Signup() {
     async function handleSubmit(e) {
         e.preventDefault()
 
-        console.log(passwordRef.current.value)
         if (passwordRef.current.value !== passwordConfirmRef.current.value) {
             return setError("Passwords do not match")
         }
@@ -26,8 +25,7 @@ export default function Signup() {
             setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value)
             history.push("/")
-        } catch (error) {
-            console.log(error)
+        } catch {
             setError('Failed to create an account')
         }
 
@@ -52,12 +50,12 @@ export default function Signup() {
 
                         <Form.Group id="password">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" ref={passwordRef} required></Form.Control>
+                            <Form.Control type="password" red={passwordRef} required></Form.Control>
                         </Form.Group>
 
                         <Form.Group id="password-confirm">
                             <Form.Label>Password Confirmation</Form.Label>
-                            <Form.Control type="password" ref={passwordConfirmRef} required></Form.Control>
+                            <Form.Control type="password" red={passwordConfirmRef} required></Form.Control>
                         </Form.Group>
 
                         <Button disabled={loading} className="w-100" type="submit">Sign Up</Button>
