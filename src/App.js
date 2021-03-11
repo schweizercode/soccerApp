@@ -7,6 +7,7 @@ import { SoccerContextProvider } from './context/soccercontext';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Profile from './components/Profile';
+import UpdateProfile from "./components/UpdateProfile"
 import ForgotPassword from './components/ForgotPassword';
 import { AuthProvider } from './context/authContext';
 import { Container } from 'react-bootstrap';
@@ -40,10 +41,12 @@ const App = () => {
                 className="d-flex align-items-center justify-content-center" style={{ minHeight: "55vh", maxWidth: "500px" }}>
                 <div
                   className="w-100">
-                  <Route path="/Register" component={Signup} />
+                  <Route path="/Profile" component={Profile} />
+                  <Route path="/update-profile" component={UpdateProfile} />
+                  <Route path="/Signup" component={Signup} />
                   <Route path="/Login" component={Login} />
                   <Route path="/forgot-password" component={ForgotPassword} />
-                  <Route path="/Profile" component={Profile} />
+
                 </div>
               </Container>
             </Switch>
