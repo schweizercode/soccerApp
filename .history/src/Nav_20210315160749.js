@@ -20,7 +20,7 @@ function Nav() {
                         <ReactBootStrap.Nav.Link eventKey={2} href="LiveChat"> Live Chat</ReactBootStrap.Nav.Link>
                     </ReactBootStrap.Nav>
 
-                    <ReactBootStrap.Nav className="mr-auto" style={{ paddingLeft: '1%', }}>
+                    <ReactBootStrap.Nav className="mr-auto" style={{ paddingLeft: '5%', }}>
                         <ReactBootStrap.Nav.Link href="/profile"> {currentUser.email}</ReactBootStrap.Nav.Link>
                     </ReactBootStrap.Nav>
 

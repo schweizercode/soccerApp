@@ -47,7 +47,8 @@ function Description() {
 
     function clickHandler() {
 
-        <Card.Body style={{ paddingTop: '25px' }}>
+
+        <Card.Body style={{ paddingTop: '225px' }}>
             <p style={{
                 backgroundColor: 'rgb(220, 218, 219)'
             }}> {team.strDescriptionEN}</p>

@@ -45,25 +45,6 @@ function Description() {
         color: 'grey',
     }
 
-    function clickHandler() {
-
-        <Card.Body style={{ paddingTop: '25px' }}>
-            <p style={{
-                backgroundColor: 'rgb(220, 218, 219)'
-            }}> {team.strDescriptionEN}</p>
-
-            <h4 > Current League: {team.strLeague}</h4>
-
-            <h4 style={{ backgroundColor: 'rgb(220, 218, 219)' }}> Formed Year: {team.intFormedYear}</h4>
-
-            <h4 > Stadium: {team.strStadium}</h4>
-
-        </Card.Body>
-
-
-    }
-
-
 
     return (
         <>
@@ -92,34 +73,30 @@ function Description() {
                                     </Card.Body>
 
                                     <div style={{ display: 'column' }}>
-                                        <Card.Body style={{ marginLeft: '1%', marginTop: '10%', justifyContent: 'spaceAround' }}>
+                                        <Card.Body style={{ marginLeft: '1%', justifyContent: 'spaceAround', }}>
                                             <div>
                                                 <Link to={{ pathname: `https://${team.strFacebook}` }} target="_blank" >
-                                                    <GrFacebookOption style={{ color: 'grey' }} />
+                                                    <GrFacebookOption />
                                                 </Link></div>
                                             <div>
                                                 <Link to={{ pathname: `https://${team.strInstagram}` }} target="_blank" >
-                                                    <GrInstagram style={{ color: 'grey' }} />
+                                                    <GrInstagram />
                                                 </Link></div>
                                             <div>
                                                 <Link to={{ pathname: `https://${team.strTwitter}` }} target="_blank" >
-                                                    <GrTwitter style={{ color: 'grey' }} />
+                                                    <GrTwitter />
                                                 </Link></div>
                                         </Card.Body>
                                     </div>
 
-                                    <div style={{ color: 'grey', hover: '' }}>
-                                        <Button style={{ backgroundColor: '#515d69', borderColor: 'white' }}
-                                            className="w-50 text-center mt-2"
-                                            onCLick={clickHandler}>
-                                            <a>Description</a> </Button>
-                                        <Button style={{ backgroundColor: '#515d69', borderColor: 'white' }}
-                                            className="w-50 text-center mt-2"><a>Table</a></Button>
+                                    <div style={{ marginTop: '95px' }}>
+                                        <Button className="w-50 text-center mt-2"> <a>Description</a> </Button>
+                                        <Button className="w-50 text-center mt-2"><a>Table</a></Button>
 
                                     </div>
 
 
-                                    {/* <div>
+                                    <div>
                                         <Card.Body style={{ paddingTop: '225px' }}>
                                             <p style={{
                                                 backgroundColor: 'rgb(220, 218, 219)'
@@ -133,7 +110,7 @@ function Description() {
                                             <h4 > Stadium: {team.strStadium}</h4>
 
                                         </Card.Body>
-                                    </div> */}
+                                    </div>
                                 </Card >
 
                             }

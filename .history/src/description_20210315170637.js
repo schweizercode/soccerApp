@@ -46,22 +46,25 @@ function Description() {
     }
 
     function clickHandler() {
-
-        <Card.Body style={{ paddingTop: '25px' }}>
-            <p style={{
-                backgroundColor: 'rgb(220, 218, 219)'
-            }}> {team.strDescriptionEN}</p>
-
-            <h4 > Current League: {team.strLeague}</h4>
-
-            <h4 style={{ backgroundColor: 'rgb(220, 218, 219)' }}> Formed Year: {team.intFormedYear}</h4>
-
-            <h4 > Stadium: {team.strStadium}</h4>
-
-        </Card.Body>
+        console.log('Button clicked')
+            <>
 
 
-    }
+            <Card.Body style={{ paddingTop: '225px' }}>
+                <p style={{
+                    backgroundColor: 'rgb(220, 218, 219)'
+                }}> {team.strDescriptionEN}</p>
+
+                <h4 > Current League: {team.strLeague}</h4>
+
+                <h4 style={{ backgroundColor: 'rgb(220, 218, 219)' }}> Formed Year: {team.intFormedYear}</h4>
+
+                <h4 > Stadium: {team.strStadium}</h4>
+
+            </Card.Body>
+        </>
+
+                }
 
 
 
@@ -113,8 +116,7 @@ function Description() {
                                             className="w-50 text-center mt-2"
                                             onCLick={clickHandler}>
                                             <a>Description</a> </Button>
-                                        <Button style={{ backgroundColor: '#515d69', borderColor: 'white' }}
-                                            className="w-50 text-center mt-2"><a>Table</a></Button>
+                                        <Button style={{ backgroundColor: '#515d69', borderColor: 'white' }} className="w-50 text-center mt-2"><a>Table</a></Button>
 
                                     </div>
 
