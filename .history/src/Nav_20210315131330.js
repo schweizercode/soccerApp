@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import * as ReactBootStrap from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { useAuth } from "./context/authContext"
 import { ImUser } from 'react-icons/im'
 import Login from './components/Login';

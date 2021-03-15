@@ -3,8 +3,6 @@ import { Card, Button, Alert } from "react-bootstrap"
 import { useAuth } from "../context/authContext"
 import { Link, useHistory } from "react-router-dom"
 
-
-
 export default function Profile() {
     const [error, setError] = useState("")
     const { currentUser, logout } = useAuth()
@@ -23,7 +21,9 @@ export default function Profile() {
 
     return (
         <>
-
+            <Link to={`/Cluboverview/`}>
+                <BsChevronDoubleLeft style={returnbuttonstyle} />
+            </Link>
 
             <Card>
                 <Card.Body>

@@ -1,8 +1,17 @@
 import React, { useState } from "react"
 import { Card, Button, Alert } from "react-bootstrap"
 import { useAuth } from "../context/authContext"
+import { BsChevronDoubleLeft } from "react-icons/bs";
 import { Link, useHistory } from "react-router-dom"
 
+
+const returnbuttonstyle = {
+    fontSize: '28px',
+    marginTop: '2%',
+    marginLeft: '2%',
+    marginBottom: '2%',
+    color: 'grey',
+}
 
 
 export default function Profile() {
@@ -22,6 +31,12 @@ export default function Profile() {
     }
 
     return (
+        <>
+            <Link to={`/Cluboverview/`}>
+                <BsChevronDoubleLeft style={returnbuttonstyle} />
+            </Link>
+        </div>
+            </>
         <>
 
 

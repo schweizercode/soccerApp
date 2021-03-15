@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import * as ReactBootStrap from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { useAuth } from "./context/authContext"
 import { ImUser } from 'react-icons/im'
 import Login from './components/Login';
@@ -19,7 +20,6 @@ function Nav() {
                     <ReactBootStrap.Nav className="mr-auto" style={{ paddingLeft: '2%', }}>
                         <ReactBootStrap.Nav.Link eventKey={2} href="LiveChat"> Live Chat</ReactBootStrap.Nav.Link>
                     </ReactBootStrap.Nav>
-
                     <ReactBootStrap.Nav className="mr-auto" style={{ paddingLeft: '5%', }}>
                         <ReactBootStrap.Nav.Link href="/profile"> {currentUser.email}</ReactBootStrap.Nav.Link>
                     </ReactBootStrap.Nav>
