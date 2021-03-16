@@ -50,15 +50,24 @@ function Description() {
 
     function showDescription() {
         return (
-            <Card style={{ paddingTop: "95px", textAlign: 'center', backgroundColor: 'rgba(68, 66, 64, 0.09)' }}>
+            <Card style={{ paddingTop: "135px" }}>
+                <p
+                    style={{
+                        backgroundColor: "rgb(220, 218, 219)",
+                    }}
+                >
+                    {" "}
+                    {team.strDescriptionEN}
+                </p>
 
-                <p>{team.strDescriptionEN}</p>
+                <h4> Current League: {team.strLeague}</h4>
 
-                <h5> Current League: {team.strLeague}</h5>
+                <h4 style={{ backgroundColor: "rgb(220, 218, 219)" }}>
+                    {" "}
+          Formed Year: {team.intFormedYear}
+                </h4>
 
-                <h5> Formed Year: {team.intFormedYear}</h5>
-
-                <h5> Stadium: {team.strStadium}</h5>
+                <h4> Stadium: {team.strStadium}</h4>
             </Card>
         );
     }

@@ -50,7 +50,7 @@ function Description() {
 
     function showDescription() {
         return (
-            <Card style={{ paddingTop: "95px", textAlign: 'center', backgroundColor: 'rgba(68, 66, 64, 0.09)' }}>
+            <Card style={{ paddingTop: "95px", textAlign: 'center', backgroundColor: 'grey' }}>
 
                 <p>{team.strDescriptionEN}</p>
 

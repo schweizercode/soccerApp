@@ -50,9 +50,10 @@ function Description() {
 
     function showDescription() {
         return (
-            <Card style={{ paddingTop: "95px", textAlign: 'center', backgroundColor: 'rgba(68, 66, 64, 0.09)' }}>
-
-                <p>{team.strDescriptionEN}</p>
+            <Card style={{ paddingTop: "95px", textAlign: 'center' }}>
+                <p>
+                    {team.strDescriptionEN}
+                </p>
 
                 <h5> Current League: {team.strLeague}</h5>
 

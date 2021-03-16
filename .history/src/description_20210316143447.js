@@ -49,37 +49,31 @@ function Description() {
 
 
     function showDescription() {
-        return (
-            <Card style={{ paddingTop: "95px", textAlign: 'center', backgroundColor: 'rgba(68, 66, 64, 0.09)' }}>
 
-                <p>{team.strDescriptionEN}</p>
+        <Card.Body style={{ paddingTop: '25px' }}>
+            <p style={{
+                backgroundColor: 'rgb(220, 218, 219)'
+            }}> {team.strDescriptionEN}</p>
 
-                <h5> Current League: {team.strLeague}</h5>
+            <h4 > Current League: {team.strLeague}</h4>
 
-                <h5> Formed Year: {team.intFormedYear}</h5>
+            <h4 style={{ backgroundColor: 'rgb(220, 218, 219)' }}> Formed Year: {team.intFormedYear}</h4>
 
-                <h5> Stadium: {team.strStadium}</h5>
-            </Card>
-        );
+            <h4 > Stadium: {team.strStadium}</h4>
+
+        </Card.Body>
+
     }
 
     function showTablefunction() {
-        return (
-            team && (
-                <div style={{ display: "flex" }}>
-                    <Table idLeague={team.idLeague}> </Table>
-                </div>
-            )
-        );
+
+        team &&
+            <div style={{ display: 'flex', }}>
+
+                <Table idLeague={team.idLeague}> </Table>
+            </div>
+
     }
-    const handleClick = (e) => {
-        console.log(`e.target`, e.target.name);
-        if (e.target.name === "description") {
-            setmoreDescription(!moreDescription);
-        } else {
-            setshowTable(!showTable);
-        }
-    };
 
 
 
@@ -129,32 +123,25 @@ function Description() {
                                     <div style={{ color: 'grey', hover: '' }}>
 
                                         <Button
-                                            style={{
-                                                backgroundColor: "#515d69",
-                                                borderColor: "white",
-                                            }}
+                                            style={{ backgroundColor: '#515d69', borderColor: 'white' }}
                                             className="w-50 text-center mt-2"
-                                            onClick={(e) => handleClick(e)}
-                                            name="description"
-                                        >
+                                            onCLick={(e) => HandleClick()}>
                                             Description
-                    </Button>
-                                        <Button
-                                            style={{
-                                                backgroundColor: "#515d69",
-                                                borderColor: "white",
-                                            }}
-                                            className="w-50 text-center mt-2"
-                                            name="table"
-                                            onClick={(e) => handleClick(e)}
-                                        >
-                                            Table
-                    </Button>
+                                        </Button>
 
                                         {moreDescription && showDescription()}
-                                        {showTable && showTablefunction()}
+
+
+                                        <Button
+                                            style={{ backgroundColor: '#515d69', borderColor: 'white' }}
+                                            className="w-50 text-center mt-2"
+                                            onClick={setshowTable(true)}>
+                                            Table
+                                        </Button>
+
                                     </div>
-                                </Card>
+
+                                </Card >
 
                             }
 

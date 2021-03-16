@@ -66,8 +66,10 @@ function Description() {
     function showTablefunction() {
         return (
             team && (
-                <div style={{ display: "flex" }}>
-                    <Table idLeague={team.idLeague}> </Table>
+                <div >
+                    <Card>
+                        <Table idLeague={team.idLeague}> </Table>
+                    </Card>
                 </div>
             )
         );
