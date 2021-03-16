@@ -125,12 +125,11 @@ function Description() {
                                         <Button
                                             style={{ backgroundColor: '#515d69', borderColor: 'white' }}
                                             className="w-50 text-center mt-2"
-                                            onCLick={() => setmoreDescription(true)}>
+                                            onCLick={setmoreDescription(true)}>
                                             <a>Description</a>
                                         </Button>
 
-                                        {moreDescription && showDescription()}
-
+                                        {moreDescription && showDescription}
 
                                         <Button
                                             style={{ backgroundColor: '#515d69', borderColor: 'white' }}
@@ -138,6 +137,8 @@ function Description() {
                                             onClick={setshowTable(true)}>
                                             <a>Table</a>
                                         </Button>
+
+
 
                                     </div>
 

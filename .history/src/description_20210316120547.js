@@ -13,8 +13,8 @@ function Description() {
     const { idTeam } = useParams()
     const { team, fetchTeam, loading } = useContext(SoccerContext);
     const [moreDescription, setmoreDescription] = useState(false);
-    const [showTable, setshowTable] = useState(false);
     console.log(team)
+
 
 
     useEffect(() => {
@@ -65,7 +65,7 @@ function Description() {
 
     }
 
-    function showTablefunction() {
+    function showTable() {
 
         team &&
             <div style={{ display: 'flex', }}>
@@ -125,17 +125,14 @@ function Description() {
                                         <Button
                                             style={{ backgroundColor: '#515d69', borderColor: 'white' }}
                                             className="w-50 text-center mt-2"
-                                            onCLick={() => setmoreDescription(true)}>
+                                            onCLick={showDescription}>
                                             <a>Description</a>
+
                                         </Button>
-
-                                        {moreDescription && showDescription()}
-
-
                                         <Button
                                             style={{ backgroundColor: '#515d69', borderColor: 'white' }}
                                             className="w-50 text-center mt-2"
-                                            onClick={setshowTable(true)}>
+                                            onClick={showTable}>
                                             <a>Table</a>
                                         </Button>
 

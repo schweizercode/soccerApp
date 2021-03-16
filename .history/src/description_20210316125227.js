@@ -129,7 +129,18 @@ function Description() {
                                             <a>Description</a>
                                         </Button>
 
-                                        {moreDescription && showDescription()}
+                                        {moreDescription && <Card.Body style={{ paddingTop: '25px' }}>
+                                            <p style={{
+                                                backgroundColor: 'rgb(220, 218, 219)'
+                                            }}> {team.strDescriptionEN}</p>
+
+                                            <h4 > Current League: {team.strLeague}</h4>
+
+                                            <h4 style={{ backgroundColor: 'rgb(220, 218, 219)' }}> Formed Year: {team.intFormedYear}</h4>
+
+                                            <h4 > Stadium: {team.strStadium}</h4>
+
+                                        </Card.Body>}
 
 
                                         <Button
