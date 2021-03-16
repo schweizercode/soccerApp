@@ -13,7 +13,6 @@ function Description() {
     const { idTeam } = useParams()
     const { team, fetchTeam, loading } = useContext(SoccerContext);
     const [moreDescription, setmoreDescription] = useState(false);
-    // const [showTable, setshowTable] = useState(false);
     console.log(team)
 
 
@@ -63,6 +62,7 @@ function Description() {
 
         </Card.Body>
 
+
     }
 
     function showTable() {
@@ -74,6 +74,7 @@ function Description() {
             </div>
 
     }
+
 
 
 

@@ -13,7 +13,6 @@ function Description() {
     const { idTeam } = useParams()
     const { team, fetchTeam, loading } = useContext(SoccerContext);
     const [moreDescription, setmoreDescription] = useState(false);
-    // const [showTable, setshowTable] = useState(false);
     console.log(team)
 
 
@@ -49,6 +48,10 @@ function Description() {
     }
 
     function showDescription() {
+        function handleClick(e) {
+            e.prevemtDefault();
+            console.log('The Link was clicked.')
+        }
 
         <Card.Body style={{ paddingTop: '25px' }}>
             <p style={{
@@ -63,22 +66,23 @@ function Description() {
 
         </Card.Body>
 
+
     }
 
-    function showTable() {
-
+    function showTablet() {
         team &&
             <div style={{ display: 'flex', }}>
 
                 <Table idLeague={team.idLeague}> </Table>
             </div>
-
     }
 
 
 
+
+
     return (
-        <>
+    <>
             <div>
                 <div
                     style={{ flexcontainerstyle }}>
@@ -104,7 +108,7 @@ function Description() {
                                     </Card.Body>
 
                                     <div style={{ display: 'column' }}>
-                                        <Card.Body style={{ marginLeft: '1%', marginTop: '6%', justifyContent: 'spaceAround' }}>
+                                        <Card.Body style={{ marginLeft: '1%', marginTop: '10%', justifyContent: 'spaceAround' }}>
                                             <div>
                                                 <Link to={{ pathname: `https://${team.strFacebook}` }} target="_blank" >
                                                     <GrFacebookOption style={{ color: 'grey' }} />
@@ -125,31 +129,24 @@ function Description() {
                                         <Button
                                             style={{ backgroundColor: '#515d69', borderColor: 'white' }}
                                             className="w-50 text-center mt-2"
-                                            onCLick={showDescription}>
+                                            onCLick={handleClick}>
                                             <a>Description</a>
-
                                         </Button>
+
                                         <Button
                                             style={{ backgroundColor: '#515d69', borderColor: 'white' }}
-                                            className="w-50 text-center mt-2"
-                                            onClick={showTable}>
+                                            className="w-50 text-center mt-2">
                                             <a>Table</a>
                                         </Button>
 
                                     </div>
 
-                                </Card >
+                </div>
 
-                            }
-
-                        </div>
-                    )
-                    }
-                </div >
-            </div >
-        </>
-    );
-}
-
-
+                    </div>
+                      </>
+                        }
+            )
+                        
+                }
 export default Description;

@@ -125,16 +125,32 @@ function Description() {
                                         <Button
                                             style={{ backgroundColor: '#515d69', borderColor: 'white' }}
                                             className="w-50 text-center mt-2"
-                                            onCLick={showDescription}>
+                                            onCLick={() => showDescription() {
+
+        <Card.Body style={{ paddingTop: '25px' }}>
+                                                <p style={{
+                                                    backgroundColor: 'rgb(220, 218, 219)'
+                                                }}> {team.strDescriptionEN}</p>
+
+                                                <h4 > Current League: {team.strLeague}</h4>
+
+                                                <h4 style={{ backgroundColor: 'rgb(220, 218, 219)' }}> Formed Year: {team.intFormedYear}</h4>
+
+                                                <h4 > Stadium: {team.strStadium}</h4>
+
+                                            </Card.Body>
+
+                                            }
+}>
                                             <a>Description</a>
 
                                         </Button>
-                                        <Button
-                                            style={{ backgroundColor: '#515d69', borderColor: 'white' }}
-                                            className="w-50 text-center mt-2"
-                                            onClick={showTable}>
-                                            <a>Table</a>
-                                        </Button>
+                                    <Button
+                                        style={{ backgroundColor: '#515d69', borderColor: 'white' }}
+                                        className="w-50 text-center mt-2"
+                                        onClick={showTable}>
+                                        <a>Table</a>
+                                    </Button>
 
                                     </div>
 
@@ -142,11 +158,11 @@ function Description() {
 
                             }
 
-                        </div>
+                </div>
                     )
                     }
                 </div >
-            </div >
+        </div >
         </>
     );
 }

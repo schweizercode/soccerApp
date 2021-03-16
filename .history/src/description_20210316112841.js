@@ -13,7 +13,6 @@ function Description() {
     const { idTeam } = useParams()
     const { team, fetchTeam, loading } = useContext(SoccerContext);
     const [moreDescription, setmoreDescription] = useState(false);
-    // const [showTable, setshowTable] = useState(false);
     console.log(team)
 
 
@@ -63,9 +62,11 @@ function Description() {
 
         </Card.Body>
 
+
     }
 
     function showTable() {
+
 
         team &&
             <div style={{ display: 'flex', }}>
@@ -73,7 +74,11 @@ function Description() {
                 <Table idLeague={team.idLeague}> </Table>
             </div>
 
+
+
+
     }
+
 
 
 
@@ -138,10 +143,32 @@ function Description() {
 
                                     </div>
 
+
+                                    {/* <div>
+                                        <Card.Body style={{ paddingTop: '225px' }}>
+                                            <p style={{
+                                                backgroundColor: 'rgb(220, 218, 219)'
+                                            }}> {team.strDescriptionEN}</p>
+
+
+                                            <h4 > Current League: {team.strLeague}</h4>
+
+                                            <h4 style={{ backgroundColor: 'rgb(220, 218, 219)' }}> Formed Year: {team.intFormedYear}</h4>
+
+                                            <h4 > Stadium: {team.strStadium}</h4>
+
+                                        </Card.Body>
+                                    </div> */}
                                 </Card >
 
                             }
 
+                            {/* {team &&
+                            <div style={{ display: 'flex', }}>
+
+                                <Table idLeague={team.idLeague}> </Table>
+                            </div>
+                        } */}
                         </div>
                     )
                     }

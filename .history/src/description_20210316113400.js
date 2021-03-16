@@ -12,8 +12,8 @@ function Description() {
 
     const { idTeam } = useParams()
     const { team, fetchTeam, loading } = useContext(SoccerContext);
-    const [moreDescription, setmoreDescription] = useState(false);
-    // const [showTable, setshowTable] = useState(false);
+    const [moreDescription, setmoreDescription] = useState(true);
+    const [showTable, setshowTable] = useState(true);
     console.log(team)
 
 
@@ -63,6 +63,7 @@ function Description() {
 
         </Card.Body>
 
+
     }
 
     function showTable() {
@@ -77,9 +78,10 @@ function Description() {
 
 
 
+
     return (
         <>
-            <div>
+            97<div>
                 <div
                     style={{ flexcontainerstyle }}>
                     {loading === true ? (<p>Loading..</p>) : (
