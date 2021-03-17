@@ -42,7 +42,7 @@ function League({ idLeague }) {
 
                 <tr>
                     <td>{team.intRank}</td>
-                    <td >{team.strTeam}</td>
+                    <td style={{ backgroundColor: 'blue' }}>{team.strTeam}</td>
                     <td>{team.intPlayed}</td>
                     <td>{team.intWin}</td>
                     <td>{team.intLoss}</td>

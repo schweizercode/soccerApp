@@ -67,7 +67,7 @@ function Description() {
         return (
             team && (
                 <div >
-                    <Table style={{ display: "flex" }} idLeague={team.idLeague}> </Table>
+                    <Table style={{ display: "flex" }} idLeague={team.idLeague} {team.strAlternate}> </Table>
                 </div>
             )
         );

@@ -23,6 +23,7 @@ function League({ idLeague }) {
 
         <Table striped bordered hover variant="dark"
             style={{
+
                 marginTop: '10%',
                 backgroundColor: 'rgb(81, 93, 105)'
             }}>
@@ -42,7 +43,7 @@ function League({ idLeague }) {
 
                 <tr>
                     <td>{team.intRank}</td>
-                    <td >{team.strTeam}</td>
+                    <td>{team.strTeam}</td>
                     <td>{team.intPlayed}</td>
                     <td>{team.intWin}</td>
                     <td>{team.intLoss}</td>

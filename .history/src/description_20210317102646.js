@@ -77,7 +77,7 @@ function Description() {
         if (e.target.name === "description") {
             setmoreDescription(!moreDescription);
         } else {
-            setshowTable(!showTable);
+            setshowTable(showTable);
         }
     };
 
