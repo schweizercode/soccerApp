@@ -96,10 +96,9 @@ function Cluboverview() {
                                         </Card.Text>
                                     </Button>
                                 </Link>
-
                                 <Button
-                                    style={{ color: 'red', backgroundColor: '#bfc9ca', borderColor: '#bfc9ca', marginBottom: '30px', }}
-                                    onClick={() => addtoFavorites(team.idTeam)}>
+                                    style={{ color: 'darkgrey', backgroundColor: '#bfc9ca', borderColor: '#bfc9ca', marginBottom: '6px' }}
+                                    onCLick={() => addtoFavorites()}>
                                     <BiHeart />
                                 </Button>
 

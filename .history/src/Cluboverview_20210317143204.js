@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import { SoccerContext } from './context/soccercontext';
 import { BiHeart } from "react-icons/bi";
-import { useAuth } from './context/authContext';
+import { authContext } from './context/authContext';
 
 
 const cardstyle = {
@@ -55,7 +55,7 @@ const textstyleheader = {
 function Cluboverview() {
 
     const { soccerData, soccer } = useContext(SoccerContext)
-    const { addtoFavorites } = useAuth()
+    const { addtoFavorites } = useContext(authContext)
 
     useEffect(() => {
         soccerData()
@@ -77,45 +77,42 @@ function Cluboverview() {
                         xs={12} md={6} lg={4}
                         key={team.idTeam}>
 
+                        <Link to={`/teams/${team.idTeam}`}>
 
-                        <Card style={cardstyle}>
+                            <Card style={cardstyle}>
 
-                            <div style={{ width: '80%' }}>
-                                <Link to={`/teams/${team.idTeam}`}>
+                                <div style={{ width: '80%' }}>
                                     <Button
                                         style={textstyleteam}
                                         variant="link"
                                         size="lg">
                                         {team.strTeam}
 
-
+                                        <Button
+                                            style={{ color: 'darkgrey', backgroundColor: '#bfc9ca', borderColor: '#bfc9ca', marginBottom: '6px' }}
+                                            onCLick={() => addtoFavorites()}>
+                                            <BiHeart />
+                                        </Button>
 
                                         <Card.Text
                                             style={textstylestadium}>
                                             {team.strStadium}
                                         </Card.Text>
                                     </Button>
-                                </Link>
 
-                                <Button
-                                    style={{ color: 'red', backgroundColor: '#bfc9ca', borderColor: '#bfc9ca', marginBottom: '30px', }}
-                                    onClick={() => addtoFavorites(team.idTeam)}>
-                                    <BiHeart />
-                                </Button>
+                                </div>
 
-                            </div>
+                                <div
+                                    style={{ width: '20%', padding: '8px', background: 'rgba(0,0,0,.2)' }}>
+                                    <Card.Img
+                                        src={team.strTeamBadge}
+                                        alt="Icon"
+                                        style={{ width: '100%' }}>
+                                    </Card.Img>
+                                </div>
 
-                            <div
-                                style={{ width: '20%', padding: '8px', background: 'rgba(0,0,0,.2)' }}>
-                                <Card.Img
-                                    src={team.strTeamBadge}
-                                    alt="Icon"
-                                    style={{ width: '100%' }}>
-                                </Card.Img>
-                            </div>
-
-                        </Card>
-
+                            </Card>
+                        </Link>
 
                     </Col>
                 ))

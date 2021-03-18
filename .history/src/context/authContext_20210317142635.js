@@ -9,7 +9,7 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
-    const [currentUser, setCurrentUser] = useState(null)
+    const [currentUser, setCurrentUser] = useState()
     const [loading, setLoading] = useState(true)
 
     function signup(email, password) {
@@ -47,22 +47,18 @@ export function AuthProvider({ children }) {
         return unsubscribe
     }, [])
 
-
-    function addtoFavorites(favorite) {
-        console.log(currentUser)
+    function addtoFavorites(favorite) => {
         // Add a new document in collection "cities"
-        if (currentUser) {
-
-            db.collection("users").doc(currentUser.uid).set({
-                Favoriteclub: favorite,
+        db.collection("users").doc(currentUser.uid).set({
+            Favoriteclub: favorite,
+        })
+            .then(() => {
+                console.log("Document successfully written!");
             })
-                .then(() => {
-                    console.log("Document successfully written!");
-                })
-                .catch((error) => {
-                    console.error("Error writing document: ", error);
-                });
-        }
+            .catch((error) => {
+                console.error("Error writing document: ", error);
+            });
+
     }
 
     const value = {
@@ -72,8 +68,7 @@ export function AuthProvider({ children }) {
         logout,
         resetPassword,
         updateEmail,
-        updatePassword,
-        addtoFavorites,
+        updatePassword
     }
 
     return (

@@ -49,9 +49,8 @@ export function AuthProvider({ children }) {
 
 
     function addtoFavorites(favorite) {
-        console.log(currentUser)
         // Add a new document in collection "cities"
-        if (currentUser) {
+        if (currentUser ==
 
             db.collection("users").doc(currentUser.uid).set({
                 Favoriteclub: favorite,
@@ -62,7 +61,7 @@ export function AuthProvider({ children }) {
                 .catch((error) => {
                     console.error("Error writing document: ", error);
                 });
-        }
+
     }
 
     const value = {

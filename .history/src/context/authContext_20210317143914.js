@@ -49,7 +49,7 @@ export function AuthProvider({ children }) {
 
 
     function addtoFavorites(favorite) {
-        console.log(currentUser)
+        console.log(currentUser\)
         // Add a new document in collection "cities"
         if (currentUser) {
 

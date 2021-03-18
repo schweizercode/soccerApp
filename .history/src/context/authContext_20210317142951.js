@@ -49,7 +49,6 @@ export function AuthProvider({ children }) {
 
 
     function addtoFavorites(favorite) {
-        console.log(currentUser)
         // Add a new document in collection "cities"
         if (currentUser) {
 
@@ -62,6 +61,7 @@ export function AuthProvider({ children }) {
                 .catch((error) => {
                     console.error("Error writing document: ", error);
                 });
+
         }
     }
 
