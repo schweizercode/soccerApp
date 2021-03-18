@@ -81,40 +81,40 @@ function Cluboverview() {
                         <Card style={cardstyle}>
 
                             <div style={{ width: '80%' }}>
-                                <Link to={`/teams/${team.idTeam}`}>
-                                    <Button
-                                        style={textstyleteam}
-                                        variant="link"
-                                        size="lg">
-                                        {team.strTeam}
-
-
-
-                                        <Card.Text
-                                            style={textstylestadium}>
-                                            {team.strStadium}
-                                        </Card.Text>
-                                    </Button>
-                                </Link>
 
                                 <Button
-                                    style={{ color: 'red', backgroundColor: '#bfc9ca', borderColor: '#bfc9ca', marginBottom: '30px', }}
-                                    onClick={() => addtoFavorites(team.idTeam)}>
-                                    <BiHeart />
+                                    style={textstyleteam}
+                                    variant="link"
+                                    size="lg">
+                                    {team.strTeam}
+
+
+
+                                    <Card.Text
+                                        style={textstylestadium}>
+                                        {team.strStadium}
+                                    </Card.Text>
                                 </Button>
-
-                            </div>
-
-                            <div
-                                style={{ width: '20%', padding: '8px', background: 'rgba(0,0,0,.2)' }}>
-                                <Link to={`/teams/${team.idTeam}`}>
-                                    <Card.Img
-                                        src={team.strTeamBadge}
-                                        alt="Icon"
-                                        style={{ width: '100%' }}>
-                                    </Card.Img>
                                 </Link>
+
+                            <Button
+                                style={{ color: 'red', backgroundColor: '#bfc9ca', borderColor: '#bfc9ca', marginBottom: '30px', }}
+                                onClick={() => addtoFavorites(team.idTeam)}>
+                                <BiHeart />
+                            </Button>
+
                             </div>
+
+                        <div
+                            style={{ width: '20%', padding: '8px', background: 'rgba(0,0,0,.2)' }}>
+                            <Link to={`/teams/${team.idTeam}`}>
+                                <Card.Img
+                                    src={team.strTeamBadge}
+                                    alt="Icon"
+                                    style={{ width: '100%' }}>
+                                </Card.Img>
+                            </Link>
+                        </div>
 
                         </Card>
 

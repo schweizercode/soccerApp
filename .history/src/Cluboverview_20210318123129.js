@@ -104,17 +104,17 @@ function Cluboverview() {
                                 </Button>
 
                             </div>
-
-                            <div
-                                style={{ width: '20%', padding: '8px', background: 'rgba(0,0,0,.2)' }}>
-                                <Link to={`/teams/${team.idTeam}`}>
+                            <Link to={`/teams/${team.idTeam}`}>
+                                <div
+                                    style={{ width: '20%', padding: '8px', background: 'rgba(0,0,0,.2)' }}>
                                     <Card.Img
                                         src={team.strTeamBadge}
                                         alt="Icon"
                                         style={{ width: '100%' }}>
                                     </Card.Img>
-                                </Link>
-                            </div>
+                                </div>
+                            </Link>
+
 
                         </Card>
 
