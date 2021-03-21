@@ -22,15 +22,14 @@ const ChatRoom = () => {
     console.log('messages', messages)
     return (
         <div style={flexContainer} >
-            <h3> Comments</h3>
-            <input type="text" placeholder='Say something..' value={body} onChange={handleOnChange} />
-            <button onClick={handleWriteMessages} >Add Comment</button>
+            <input type="text" placeholder='message' value={body} onChange={handleOnChange} />
+            <button onClick={handleWriteMessages} >add message</button>
             {currentUser ? <p>Authenticated</p> : <p>Not Authenticated</p>}
             {messages ? messages.map((message, index) => {
                 return (
                     <div>
                         <h5>{message.userEmail}</h5>
-                        <h6>{message.timestamp.toString()}</h6>
+                        <h6>{message.newDate().toString()}</h6>
                         <p>{message.body}</p>
                     </div>
                 )

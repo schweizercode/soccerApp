@@ -23,7 +23,7 @@ const ChatRoom = () => {
     return (
         <div style={flexContainer} >
             <h3> Comments</h3>
-            <input type="text" placeholder='Say something..' value={body} onChange={handleOnChange} />
+            <input type="text" placeholder='message' value={body} onChange={handleOnChange} />
             <button onClick={handleWriteMessages} >Add Comment</button>
             {currentUser ? <p>Authenticated</p> : <p>Not Authenticated</p>}
             {messages ? messages.map((message, index) => {
