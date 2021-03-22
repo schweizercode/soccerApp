@@ -14,7 +14,6 @@ function Description() {
     const { team, fetchTeam, loading } = useContext(SoccerContext);
     const [moreDescription, setmoreDescription] = useState(false);
     const [showTable, setshowTable] = useState(false);
-    const [comment, setComment] = useState('');
     console.log(team)
 
 
@@ -73,7 +72,6 @@ function Description() {
             )
         );
     }
-
     const handleClick = (e) => {
         console.log(`e.target`, e.target.name);
         if (e.target.name === "description") {
@@ -83,17 +81,6 @@ function Description() {
         }
     };
 
-    function CommentAdd(props) {
-        const { handleCommentSubmit } = props;
-        let comment = '';
-    }
-
-    handleCommentSubmit(data){
-
-        const postData = {
-            comment: data
-        };
-    }
 
 
     return (
@@ -173,23 +160,9 @@ function Description() {
                         </div>
                     )
                     }
+
+
                 </div >
-                <div>
-                    <div className="card mt-4 mb-3">
-                        <div className="card-header"><strong>Comments</strong> </div>
-                        <div className="card-body">
-                            <textarea name="comment" className="from-control" placehodler="Add a new comment"
-                                onChange={event => setComment(event.target.value)} value={comment}></textarea>
-                        </div>
-                    </div>
-                    <div>
-                        <button className="btn btn-primary mr-3" onClick={event => {
-                            handleCommentSubmit(comment);
-                            setComment = ('');
-                        }}>Comment</button>
-                        <button className="btn btn-warning">Close issue</button>
-                    </div>
-                </div>
             </div >
         </>
     );

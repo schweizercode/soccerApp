@@ -88,12 +88,6 @@ function Description() {
         let comment = '';
     }
 
-    handleCommentSubmit(data){
-
-        const postData = {
-            comment: data
-        };
-    }
 
 
     return (
@@ -179,13 +173,13 @@ function Description() {
                         <div className="card-header"><strong>Comments</strong> </div>
                         <div className="card-body">
                             <textarea name="comment" className="from-control" placehodler="Add a new comment"
-                                onChange={event => setComment(event.target.value)} value={comment}></textarea>
+                                onChange={event => comment = event.target.value} value={comment}></textarea>
                         </div>
                     </div>
                     <div>
                         <button className="btn btn-primary mr-3" onClick={event => {
                             handleCommentSubmit(comment);
-                            setComment = ('');
+                            comment = ''
                         }}>Comment</button>
                         <button className="btn btn-warning">Close issue</button>
                     </div>

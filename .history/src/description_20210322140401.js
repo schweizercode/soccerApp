@@ -88,12 +88,6 @@ function Description() {
         let comment = '';
     }
 
-    handleCommentSubmit(data){
-
-        const postData = {
-            comment: data
-        };
-    }
 
 
     return (
