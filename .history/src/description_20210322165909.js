@@ -171,7 +171,7 @@ function Description() {
                                             {messages ? messages.map((message, index) => {
                                                 return (
                                                     <div>
-                                                        <h5>{message.userEmail} commented on {new Date(message.timestamp.toMillis()).toLocaleString()}:</h5>
+                                                        <Card.Body><h5>{message.userEmail} commented on {new Date(message.timestamp.toMillis()).toLocaleString()}:</h5></Card.Body>
                                                         {/* <h6>{new Date(message.timestamp.toMillis()).toLocaleString()}</h6> */}
                                                         <p>{message.body}</p>
                                                     </div>

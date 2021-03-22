@@ -167,11 +167,11 @@ function Description() {
                                     </div>
 
                                     <div >
-                                        <Card style={{ backgroundColor: 'rgba(68, 66, 64, 0.09)', padding: '3%', textAlign: 'left', marginTop: '%' }} >
+                                        <Card style={{ backgroundColor: 'rgba(68, 66, 64, 0.09)', padding: '2%', textAlign: 'left', marginTop: '%' }} >
                                             {messages ? messages.map((message, index) => {
                                                 return (
                                                     <div>
-                                                        <h5>{message.userEmail} commented on {new Date(message.timestamp.toMillis()).toLocaleString()}:</h5>
+                                                        <h5>{message.userEmail} commented on {new Date(message.timestamp.toMillis()).toLocaleString()}</h5>
                                                         {/* <h6>{new Date(message.timestamp.toMillis()).toLocaleString()}</h6> */}
                                                         <p>{message.body}</p>
                                                     </div>

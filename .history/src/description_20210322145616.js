@@ -9,21 +9,19 @@ import { SoccerContext } from './context/SoccerContext';
 import { ChatContext } from './context/ChatContext'
 
 
-
 function Description() {
 
     const { idTeam } = useParams()
-    const { team, fetchTeam, loading, } = useContext(SoccerContext);
-    const { writeMessages, getMessages, messages } = useContext(ChatContext);
+    const { team, fetchTeam, loading } = useContext(SoccerContext);
+    const { writeMessages } = useContext(ChatContext);
     const [moreDescription, setmoreDescription] = useState(false);
     const [showTable, setshowTable] = useState(false);
     const [comment, setComment] = useState('');
-    console.log(messages)
+    console.log(team)
 
 
     useEffect(() => {
         fetchTeam(idTeam)
-        getMessages(idTeam)
 
     }, [])
 
@@ -87,11 +85,16 @@ function Description() {
         }
     };
 
-    function handleCommentSubmit() {
+    function CommentAdd(props) {
+        const { handleCommentSubmit } = props;
+        let comment = '';
+    }
 
-        setComment('')
-        writeMessages(idTeam, comment)
+    function handleCommentSubmit(messages) {
 
+        const postedComments = {
+            comment: messages
+        };
     }
 
 
@@ -167,21 +170,9 @@ function Description() {
                                     </div>
 
                                     <div >
-                                        <Card style={{ backgroundColor: 'rgba(68, 66, 64, 0.09)', padding: '3%', textAlign: 'left', marginTop: '%' }} >
-                                            {messages ? messages.map((message, index) => {
-                                                return (
-                                                    <div>
-                                                        <h5>{message.userEmail} commented on {new Date(message.timestamp.toMillis()).toLocaleString()}:</h5>
-                                                        {/* <h6>{new Date(message.timestamp.toMillis()).toLocaleString()}</h6> */}
-                                                        <p>{message.body}</p>
-                                                    </div>
-                                                )
-                                            }) : <h2>Loading...</h2>}
-                                        </Card>
                                         <div className="card mt-4 mb-3" style={{ alignItems: 'center' }}>
 
                                             <div className="card-header"><strong>Comment Section</strong> </div>
-
                                             <div className="card-body">
                                                 <textarea name="comment" className="from-control" placehodler='Add a new comment'
                                                     onChange={event => setComment(event.target.value)} value={comment}></textarea>
@@ -189,14 +180,14 @@ function Description() {
 
                                         </div>
 
-
                                         <div style={{ alignItems: 'center', textAlign: 'center' }}>
                                             <button className="btn btn-primary mr-3"
                                                 style={{
                                                     backgroundColor: "#515d69", borderColor: "white",
                                                 }}
                                                 onClick={event => {
-                                                    handleCommentSubmit();
+                                                    handleCommentSubmit(comment);
+
                                                 }}>Comment</button>
 
                                         </div>

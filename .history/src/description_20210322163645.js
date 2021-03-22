@@ -9,7 +9,6 @@ import { SoccerContext } from './context/SoccerContext';
 import { ChatContext } from './context/ChatContext'
 
 
-
 function Description() {
 
     const { idTeam } = useParams()
@@ -167,50 +166,50 @@ function Description() {
                                     </div>
 
                                     <div >
-                                        <Card style={{ backgroundColor: 'rgba(68, 66, 64, 0.09)', padding: '3%', textAlign: 'left', marginTop: '%' }} >
+                                        <Card style={backgroundColor: 'rgba(68, 66, 64, 0.09)'} >
                                             {messages ? messages.map((message, index) => {
-                                                return (
-                                                    <div>
-                                                        <h5>{message.userEmail} commented on {new Date(message.timestamp.toMillis()).toLocaleString()}:</h5>
-                                                        {/* <h6>{new Date(message.timestamp.toMillis()).toLocaleString()}</h6> */}
-                                                        <p>{message.body}</p>
-                                                    </div>
-                                                )
-                                            }) : <h2>Loading...</h2>}
+                                            return (
+                                                <div>
+                                                    <h5>{message.userEmail}</h5>
+                                                    <h6>{new Date(message.timestamp.toMillis()).toLocaleString()}</h6>
+                                                    <p>{message.body}</p>
+                                                </div>
+                                            )
+                                        }) : <h2>Loading...</h2>}
                                         </Card>
-                                        <div className="card mt-4 mb-3" style={{ alignItems: 'center' }}>
+                                    <div className="card mt-4 mb-3" style={{ alignItems: 'center' }}>
 
-                                            <div className="card-header"><strong>Comment Section</strong> </div>
+                                        <div className="card-header"><strong>Comment Section</strong> </div>
 
-                                            <div className="card-body">
-                                                <textarea name="comment" className="from-control" placehodler='Add a new comment'
-                                                    onChange={event => setComment(event.target.value)} value={comment}></textarea>
-                                            </div>
-
+                                        <div className="card-body">
+                                            <textarea name="comment" className="from-control" placehodler='Add a new comment'
+                                                onChange={event => setComment(event.target.value)} value={comment}></textarea>
                                         </div>
 
+                                    </div>
 
-                                        <div style={{ alignItems: 'center', textAlign: 'center' }}>
-                                            <button className="btn btn-primary mr-3"
-                                                style={{
-                                                    backgroundColor: "#515d69", borderColor: "white",
-                                                }}
-                                                onClick={event => {
-                                                    handleCommentSubmit();
-                                                }}>Comment</button>
 
-                                        </div>
+                                    <div style={{ alignItems: 'center', textAlign: 'center' }}>
+                                        <button className="btn btn-primary mr-3"
+                                            style={{
+                                                backgroundColor: "#515d69", borderColor: "white",
+                                            }}
+                                            onClick={event => {
+                                                handleCommentSubmit();
+                                            }}>Comment</button>
+
+                                    </div>
                                     </div>
                                 </Card>
 
                             }
 
-                        </div>
+                </div>
                     )
                     }
                 </div >
 
-            </div >
+        </div >
         </>
     );
 }

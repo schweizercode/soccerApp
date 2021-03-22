@@ -29,10 +29,13 @@ export const ChatContextProvider = ({ children }) => {
     // const { user } = useContext(AuthContext)
     const db = firebase.firestore();
 
+    useEffect(() => {
+        getMessages()
+    }, [])
 
-    function getMessages(idTeam) {
+    const getMessages = () => {
 
-        db.collection(idTeam).get().then((querySnapshot) => {
+        db.collection("messages").get().then((querySnapshot) => {
             const messagesArray = []
 
             querySnapshot.forEach((doc) => {
@@ -58,7 +61,7 @@ export const ChatContextProvider = ({ children }) => {
         })
             .then((docRef) => {
                 console.log("Document written with ID: ", docRef.id);
-                getMessages(teamid)
+                getMessages()
             })
             .catch((error) => {
                 console.error("Error adding document: ", error);

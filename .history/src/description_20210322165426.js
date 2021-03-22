@@ -9,7 +9,6 @@ import { SoccerContext } from './context/SoccerContext';
 import { ChatContext } from './context/ChatContext'
 
 
-
 function Description() {
 
     const { idTeam } = useParams()
@@ -167,11 +166,11 @@ function Description() {
                                     </div>
 
                                     <div >
-                                        <Card style={{ backgroundColor: 'rgba(68, 66, 64, 0.09)', padding: '3%', textAlign: 'left', marginTop: '%' }} >
+                                        <Card style={{ backgroundColor: 'rgba(68, 66, 64, 0.09)', padding: '2%', textAlign: 'left', marginTop: '%' }} >
                                             {messages ? messages.map((message, index) => {
                                                 return (
                                                     <div>
-                                                        <h5>{message.userEmail} commented on {new Date(message.timestamp.toMillis()).toLocaleString()}:</h5>
+                                                        <h5>{message.userEmail} commented on {new Date(message.timestamp.toMillis()).toLocaleString()}</h5>
                                                         {/* <h6>{new Date(message.timestamp.toMillis()).toLocaleString()}</h6> */}
                                                         <p>{message.body}</p>
                                                     </div>
@@ -183,7 +182,9 @@ function Description() {
                                             <div className="card-header"><strong>Comment Section</strong> </div>
 
                                             <div className="card-body">
-                                                <textarea name="comment" className="from-control" placehodler='Add a new comment'
+                                                <textarea rowsMax={4}
+                                                    aria-label="maximum height"
+                                                    placeholder="Maximum 4 rows" name="comment" className="from-control" placehodler='Add a new comment'
                                                     onChange={event => setComment(event.target.value)} value={comment}></textarea>
                                             </div>
 
