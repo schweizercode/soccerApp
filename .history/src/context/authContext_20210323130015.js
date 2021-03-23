@@ -66,25 +66,15 @@ export function AuthProvider({ children }) {
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
-            setCurrentUser(user)
-
+            getFavorite()
             console.log(user)
+            setCurrentUser(user)
             setLoading(false)
 
         })
 
         return unsubscribe
-
     }, [])
-
-
-    useEffect(() => {
-
-        if (currentUser) {
-            getFavorite()
-        }
-
-    }, [currentUser])
 
 
     function addtoFavorites(favorite) {
@@ -97,11 +87,7 @@ export function AuthProvider({ children }) {
                 // Atomically add a new region to the "regions" array field.
                 .update({
                     Favoriteclub: firebase.firestore.FieldValue.arrayUnion(favorite)
-                })
-
-                .then(() => {
-                    getFavorite()
-                })
+                });
         }
     }
 

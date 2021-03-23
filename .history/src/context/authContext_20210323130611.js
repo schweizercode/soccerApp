@@ -98,7 +98,6 @@ export function AuthProvider({ children }) {
                 .update({
                     Favoriteclub: firebase.firestore.FieldValue.arrayUnion(favorite)
                 })
-
                 .then(() => {
                     getFavorite()
                 })

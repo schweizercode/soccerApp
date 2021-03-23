@@ -12,7 +12,6 @@ export function useAuth() {
 export function AuthProvider({ children }) {
     const [currentUser, setCurrentUser] = useState(null)
     const [loading, setLoading] = useState(true)
-    const [favorites, setFavorites] = useState([])
 
     function signup(email, password) {
         console.log(email, password)
@@ -42,6 +41,9 @@ export function AuthProvider({ children }) {
             });
 
 
+
+
+
     }
 
     function login(email, passwword) {
@@ -66,25 +68,14 @@ export function AuthProvider({ children }) {
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
-            setCurrentUser(user)
-
             console.log(user)
+            setCurrentUser(user)
             setLoading(false)
 
         })
 
         return unsubscribe
-
     }, [])
-
-
-    useEffect(() => {
-
-        if (currentUser) {
-            getFavorite()
-        }
-
-    }, [currentUser])
 
 
     function addtoFavorites(favorite) {
@@ -97,34 +88,10 @@ export function AuthProvider({ children }) {
                 // Atomically add a new region to the "regions" array field.
                 .update({
                     Favoriteclub: firebase.firestore.FieldValue.arrayUnion(favorite)
-                })
-
-                .then(() => {
-                    getFavorite()
-                })
+                });
         }
     }
 
-    function getFavorite() {
-
-        var docRef = db.collection("users").doc(currentUser.uid);
-
-        docRef.get().then((doc) => {
-            if (doc.exists) {
-                console.log("Document data:", doc.data());
-                const document = doc.data()
-                setFavorites(document.Favoriteclub)
-
-            } else {
-                // doc.data() will be undefined in this case
-                console.log("No such document!");
-            }
-        }).catch((error) => {
-            console.log("Error getting document:", error);
-
-        });
-
-    }
 
     const value = {
         currentUser,
@@ -135,7 +102,6 @@ export function AuthProvider({ children }) {
         updateEmail,
         updatePassword,
         addtoFavorites,
-        favorites,
     }
 
     return (

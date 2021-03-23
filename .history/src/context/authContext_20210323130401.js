@@ -87,6 +87,7 @@ export function AuthProvider({ children }) {
     }, [currentUser])
 
 
+
     function addtoFavorites(favorite) {
         console.log(currentUser)
         // Add a new document in collection "cities"
@@ -97,11 +98,7 @@ export function AuthProvider({ children }) {
                 // Atomically add a new region to the "regions" array field.
                 .update({
                     Favoriteclub: firebase.firestore.FieldValue.arrayUnion(favorite)
-                })
-
-                .then(() => {
-                    getFavorite()
-                })
+                });
         }
     }
 

@@ -77,14 +77,14 @@ export function AuthProvider({ children }) {
 
     }, [])
 
-
     useEffect(() => {
 
         if (currentUser) {
             getFavorite()
+
         }
 
-    }, [currentUser])
+    })
 
 
     function addtoFavorites(favorite) {
@@ -97,11 +97,7 @@ export function AuthProvider({ children }) {
                 // Atomically add a new region to the "regions" array field.
                 .update({
                     Favoriteclub: firebase.firestore.FieldValue.arrayUnion(favorite)
-                })
-
-                .then(() => {
-                    getFavorite()
-                })
+                });
         }
     }
 

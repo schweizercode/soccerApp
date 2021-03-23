@@ -3,9 +3,8 @@ import './App.css';
 import { Link } from 'react-router-dom';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import { SoccerContext } from './context/SoccerContext';
-import { BsHeart, BsHeartFill } from "react-icons/bs";
+import { BiHeart } from "react-icons/bi";
 import { useAuth } from './context/AuthContext';
-
 
 
 const cardstyle = {
@@ -56,15 +55,18 @@ const textstyleheader = {
 function Cluboverview() {
 
     const { soccerData, soccer } = useContext(SoccerContext)
-    const { addtoFavorites, favorites } = useAuth()
-
+    const { addtoFavorites } = useAuth()
 
     useEffect(() => {
         soccerData()
     }, [])
 
 
-
+    function handleClick() {
+        this.setState({
+            Color: 'blue'
+        })
+    }
 
 
     return (
@@ -106,10 +108,9 @@ function Cluboverview() {
                                     style={{ color: 'red', backgroundColor: '#bfc9ca', borderColor: '#bfc9ca', marginBottom: '30px', }}
                                     onClick={() => {
                                         addtoFavorites(team.idTeam);
-
+                                        this.handleClick();
                                     }}>
-
-                                    {favorites.includes(team.idTeam) ? <BsHeartFill /> : <BsHeart />}
+                                    <BiHeart />
                                 </Button>
 
                             </div>

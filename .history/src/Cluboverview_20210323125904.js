@@ -109,7 +109,8 @@ function Cluboverview() {
 
                                     }}>
 
-                                    {favorites.includes(team.idTeam) ? <BsHeartFill /> : <BsHeart />}
+                                    {favorites.includes(team.idTeam) ? <BsHeartFill/>
+                                        <BsHeart />}
                                 </Button>
 
                             </div>
