@@ -64,7 +64,7 @@ function Cluboverview() {
 
     function handleClick() {
         this.setState({
-            Color: 'blue'
+            bgColor: 'blue'
         })
     }
 
@@ -104,7 +104,7 @@ function Cluboverview() {
                                 </Link>
 
                                 <Button
-                                    style={{ color: 'red', backgroundColor: '#bfc9ca', borderColor: '#bfc9ca', marginBottom: '30px', }}
+                                    style={{ color: 'red', backgroundColor: 'yellow', backgroundColor: '#bfc9ca', borderColor: '#bfc9ca', marginBottom: '30px', }}
                                     onClick={() => {
                                         addtoFavorites(team.idTeam);
                                         this.handleClick();

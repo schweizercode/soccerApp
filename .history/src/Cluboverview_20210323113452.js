@@ -61,10 +61,9 @@ function Cluboverview() {
         soccerData()
     }, [])
 
-
     function handleClick() {
         this.setState({
-            Color: 'blue'
+            bgColor: 'blue'
         })
     }
 

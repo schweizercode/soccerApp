@@ -64,7 +64,7 @@ function Cluboverview() {
 
     function handleClick() {
         this.setState({
-            Color: 'blue'
+            bgColor: 'blue'
         })
     }
 

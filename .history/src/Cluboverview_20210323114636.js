@@ -64,7 +64,7 @@ function Cluboverview() {
 
     function handleClick() {
         this.setState({
-            Color: 'blue'
+            bgColor: 'blue'
         })
     }
 
@@ -104,9 +104,11 @@ function Cluboverview() {
                                 </Link>
 
                                 <Button
-                                    style={{ color: 'red', backgroundColor: '#bfc9ca', borderColor: '#bfc9ca', marginBottom: '30px', }}
-                                    onClick={() => {
-                                        addtoFavorites(team.idTeam);
+                                    style={{
+                                        color: 'red', fill: 'red
+                                    ', backgroundColor: '#bfc9ca', borderColor: '#bfc9ca', marginBottom: '30px', }}
+                                    onClick = {() => {
+                                    addtoFavorites(team.idTeam);
                                         this.handleClick();
                                     }}>
                                     <BiHeart />
@@ -114,16 +116,16 @@ function Cluboverview() {
 
                             </div>
 
-                            <div
-                                style={{ width: '20%', padding: '8px', background: 'rgba(0,0,0,.2)' }}>
-                                <Link to={`/teams/${team.idTeam}`}>
-                                    <Card.Img
-                                        src={team.strTeamBadge}
-                                        alt="Icon"
-                                        style={{ width: '100%' }}>
-                                    </Card.Img>
-                                </Link>
-                            </div>
+                        <div
+                            style={{ width: '20%', padding: '8px', background: 'rgba(0,0,0,.2)' }}>
+                            <Link to={`/teams/${team.idTeam}`}>
+                                <Card.Img
+                                    src={team.strTeamBadge}
+                                    alt="Icon"
+                                    style={{ width: '100%' }}>
+                                </Card.Img>
+                            </Link>
+                        </div>
 
                         </Card>
 

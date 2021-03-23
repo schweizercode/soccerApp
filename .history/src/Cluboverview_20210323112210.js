@@ -62,11 +62,6 @@ function Cluboverview() {
     }, [])
 
 
-    function handleClick() {
-        this.setState({
-            Color: 'blue'
-        })
-    }
 
     return (
         <div style={{ backgroundColor: '#e5e5e5' }}>
@@ -105,10 +100,7 @@ function Cluboverview() {
 
                                 <Button
                                     style={{ color: 'red', backgroundColor: '#bfc9ca', borderColor: '#bfc9ca', marginBottom: '30px', }}
-                                    onClick={() => {
-                                        addtoFavorites(team.idTeam);
-                                        this.handleClick();
-                                    }}>
+                                    onClick={() => addtoFavorites(team.idTeam)}>
                                     <BiHeart />
                                 </Button>
 
