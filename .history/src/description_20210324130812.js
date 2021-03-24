@@ -180,7 +180,7 @@ function Description() {
                                         </Card>
                                         <div className="card mt-4 mb-3" style={{ alignItems: 'center' }}>
 
-                                            <div className="card-header" style={{ color: '#515d69' }}><strong>Comment Section</strong> </div>
+                                            <div className="card-header" style={{ color: 'grey' }}><strong>Comment Section</strong> </div>
 
                                             <div className="card-body">
                                                 <textarea name="comment" className="from-control" placehodler='Add a new comment'

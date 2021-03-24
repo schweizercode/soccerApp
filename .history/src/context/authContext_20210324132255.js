@@ -125,25 +125,13 @@ export function AuthProvider({ children }) {
 
     }
 
-    function deleteFavorites(favorite) {
-        console.log(currentUser)
-        // Add a new document in collection "cities"
-        if (currentUser) {
-
-            db.collection("users").doc(currentUser.uid)
-
-                // Atomically add a new region to the "regions" array field.
-                .update({
-                    Favoriteclub: firebase.firestore.FieldValue.arrayRemove(favorite)
-                })
-
-                .then(() => {
-                    getFavorite()
-                })
-        }
+    function deleteFavorite() {
+        db.collection("users").doc(currentUser.uid).delete().then(() => {
+            console.log("Document successfully deleted!");
+        }).catch((error) => {
+            console.error("Error removing document: ", error);
+        });
     }
-
-
 
     const value = {
         currentUser,
@@ -154,7 +142,7 @@ export function AuthProvider({ children }) {
         updateEmail,
         updatePassword,
         addtoFavorites,
-        deleteFavorites,
+        deleteFavorite,
         favorites,
     }
 

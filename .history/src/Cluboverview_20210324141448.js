@@ -56,7 +56,7 @@ const textstyleheader = {
 function Cluboverview() {
 
     const { soccerData, soccer } = useContext(SoccerContext)
-    const { addtoFavorites, favorites, deleteFavorites } = useAuth()
+    const { addtoFavorites, favorites, deleteFavorite } = useAuth()
 
     useEffect(() => {
         soccerData()
@@ -105,7 +105,7 @@ function Cluboverview() {
                                         }
 
                                         else {
-                                            deleteFavorites(team.idTeam)
+                                            deleteFavorite(team.idTeam)
                                         }
 
                                     }}>

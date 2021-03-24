@@ -21,7 +21,7 @@ function Nav() {
                     </ReactBootStrap.Nav> */}
 
                     <ReactBootStrap.Nav className="mr-auto" style={{ paddingLeft: '1%', }}>
-                        {currentUser && <ReactBootStrap.Nav.Link href="/profile">User:{currentUser.email}</ReactBootStrap.Nav.Link>}
+                        <ReactBootStrap.Nav.Link href="/profile">User:{currentUser.email}</ReactBootStrap.Nav.Link>
                     </ReactBootStrap.Nav>
 
                     <ReactBootStrap.Nav className="mr-auto" style={{ marginRight: '2%', }}>

@@ -56,7 +56,7 @@ const textstyleheader = {
 function Cluboverview() {
 
     const { soccerData, soccer } = useContext(SoccerContext)
-    const { addtoFavorites, favorites, deleteFavorites } = useAuth()
+    const { addtoFavorites, favorites, deleteFavorite } = useAuth()
 
     useEffect(() => {
         soccerData()
@@ -99,15 +99,9 @@ function Cluboverview() {
                                 <Button
                                     style={{ color: 'red', backgroundColor: '#bfc9ca', borderColor: '#bfc9ca', marginBottom: '30px', }}
                                     onClick={() => {
-
-                                        if (!favorites.includes(team.idTeam)) {
+                                        if (favorites.includes)
                                             addtoFavorites(team.idTeam)
-                                        }
-
-                                        else {
-                                            deleteFavorites(team.idTeam)
-                                        }
-
+                                        deleteFavorite(team.idTeam);
                                     }}>
                                     {favorites.includes(team.idTeam) ? <BsHeartFill /> : <BsHeart />}
                                 </Button>
