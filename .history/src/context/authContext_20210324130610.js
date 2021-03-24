@@ -125,13 +125,13 @@ export function AuthProvider({ children }) {
 
     }
 
-    function deleteFavorite(favorite) {
-        db.collection("users").doc(currentUser.uid).delete().then(() => {
-            console.log("Document successfully deleted!");
-        }).catch((error) => {
-            console.error("Error removing document: ", error);
-        });
-    }
+    // function deleteFavorite(favorite) {
+    //     db.collection("users").doc(currentUser.uid).delete().then(() => {
+    //         console.log("Document successfully deleted!");
+    //     }).catch((error) => {
+    //         console.error("Error removing document: ", error);
+    //     });
+    // }
 
     const value = {
         currentUser,
@@ -142,7 +142,7 @@ export function AuthProvider({ children }) {
         updateEmail,
         updatePassword,
         addtoFavorites,
-        deleteFavorite,
+        // deleteFavorite,
         favorites,
     }
 

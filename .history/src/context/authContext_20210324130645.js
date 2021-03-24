@@ -142,7 +142,7 @@ export function AuthProvider({ children }) {
         updateEmail,
         updatePassword,
         addtoFavorites,
-        deleteFavorite,
+        // deleteFavorite,
         favorites,
     }
 

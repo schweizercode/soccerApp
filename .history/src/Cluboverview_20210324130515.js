@@ -56,11 +56,16 @@ const textstyleheader = {
 function Cluboverview() {
 
     const { soccerData, soccer } = useContext(SoccerContext)
-    const { addtoFavorites, favorites, deleteFavorite } = useAuth()
+    const { addtoFavorites, favorites } = useAuth()
+    const { deleteFavorite } = useAuth()
+
 
     useEffect(() => {
         soccerData()
     }, [])
+
+
+
 
 
     return (
@@ -88,6 +93,8 @@ function Cluboverview() {
                                         variant="link"
                                         size="lg">
                                         {team.strTeam}
+
+
 
                                         <Card.Text
                                             style={textstylestadium}>

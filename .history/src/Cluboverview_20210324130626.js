@@ -100,7 +100,7 @@ function Cluboverview() {
                                     style={{ color: 'red', backgroundColor: '#bfc9ca', borderColor: '#bfc9ca', marginBottom: '30px', }}
                                     onClick={() => {
                                         addtoFavorites(team.idTeam);
-                                        deleteFavorite(team.idTeam);
+                                        // deleteFavorite(team.idTeam);
                                     }}>
                                     {favorites.includes(team.idTeam) ? <BsHeartFill /> : <BsHeart />}
                                 </Button>

@@ -89,6 +89,8 @@ function Cluboverview() {
                                         size="lg">
                                         {team.strTeam}
 
+
+
                                         <Card.Text
                                             style={textstylestadium}>
                                             {team.strStadium}

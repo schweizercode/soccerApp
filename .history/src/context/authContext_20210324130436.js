@@ -104,6 +104,8 @@ export function AuthProvider({ children }) {
     }
 
 
+
+
     function getFavorite() {
 
         var docRef = db.collection("users").doc(currentUser.uid);
@@ -125,7 +127,7 @@ export function AuthProvider({ children }) {
 
     }
 
-    function deleteFavorite(favorite) {
+    function deleteFavorites(favorite) {
         db.collection("users").doc(currentUser.uid).delete().then(() => {
             console.log("Document successfully deleted!");
         }).catch((error) => {
@@ -142,7 +144,7 @@ export function AuthProvider({ children }) {
         updateEmail,
         updatePassword,
         addtoFavorites,
-        deleteFavorite,
+        deleteFavorites,
         favorites,
     }
 

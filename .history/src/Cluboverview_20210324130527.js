@@ -63,6 +63,9 @@ function Cluboverview() {
     }, [])
 
 
+
+
+
     return (
         <div style={{ backgroundColor: '#e5e5e5' }}>
 
@@ -88,6 +91,8 @@ function Cluboverview() {
                                         variant="link"
                                         size="lg">
                                         {team.strTeam}
+
+
 
                                         <Card.Text
                                             style={textstylestadium}>
