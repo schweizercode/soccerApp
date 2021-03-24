@@ -108,7 +108,9 @@ function Cluboverview() {
                                     onClick={() => {
                                         addtoFavorites(team.idTeam);
                                         deleteFavorites(team.idTeam);
+
                                     }}>
+
                                     {favorites.includes(team.idTeam) ? <BsHeartFill /> : <BsHeart />}
                                 </Button>
 
