@@ -16,8 +16,12 @@ function Nav() {
                 <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
 
-                    <ReactBootStrap.Nav className="mr-auto" style={{ paddingLeft: '1%', fontSize: '12px' }}>
-                        {currentUser && <ReactBootStrap.Nav.Link href="/profile">User:{currentUser.email}</ReactBootStrap.Nav.Link>}
+                    {/* <ReactBootStrap.Nav className="mr-auto" style={{ paddingLeft: '2%', }}>
+                        <ReactBootStrap.Nav.Link eventKey={2} href="/chat">Chat</ReactBootStrap.Nav.Link>
+                    </ReactBootStrap.Nav> */}
+
+                    <ReactBootStrap.Nav className="mr-auto" style={{ paddingLeft: '1%', }}>
+                        {currentUser && <ReactBootStrap.Nav.Link href="/profile">Loged in as User:{currentUser.email}</ReactBootStrap.Nav.Link>}
                     </ReactBootStrap.Nav>
 
                     <ReactBootStrap.Nav className="mr-auto" style={{ marginRight: '2%', }}>
