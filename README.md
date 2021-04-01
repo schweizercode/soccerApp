@@ -27,7 +27,7 @@
 - Authenticate the user via Google Authentication & Firese 
 
 
-# Registration/LogIn Page with Firebase
+### Registration/LogIn Page with Firebase
 
 - Store the chat messages and its author
 
