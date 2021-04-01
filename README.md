@@ -1,4 +1,4 @@
-# Single Page Application (SPA)
+# Single Page Application (SPA) - SOCCER APP
 
 - This Single-Page Application is an App that works inside a browser and does not require page reloading during use.
 
