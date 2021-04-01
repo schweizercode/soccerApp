@@ -20,6 +20,7 @@ function League({ idLeague }) {
 
 
     return (
+
         <Table striped bordered hover variant="dark"
             style={{
                 marginTop: '10%',

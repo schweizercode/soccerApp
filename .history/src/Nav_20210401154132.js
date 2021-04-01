@@ -3,7 +3,7 @@ import './App.css';
 import * as ReactBootStrap from 'react-bootstrap';
 import { useAuth } from "./context/AuthContext"
 import { ImUser } from 'react-icons/im'
-// import Login from './components/Login';
+import Login from './components/Login';
 
 function Nav() {
 
