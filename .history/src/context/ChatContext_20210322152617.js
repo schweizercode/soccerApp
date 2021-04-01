@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import { useAuth } from './AuthContext';
 import { useHistory } from "react-router-dom";
+// 2 create config.js, import and gitignore
 import firebase from "../firebase.js"
 
 
@@ -15,6 +16,8 @@ const initContext = {
 
 }
 
+// 3 Login & Register components
+//update router and wrap auth provider
 
 export const ChatContext = createContext(initContext)
 
@@ -23,6 +26,7 @@ export const ChatContextProvider = ({ children }) => {
     const { currentUser } = useAuth()
     const [messages, setMessages] = useState(initContext.messages)
     let history = useHistory()
+    // const { user } = useContext(AuthContext)
     const db = firebase.firestore();
 
 
@@ -32,12 +36,14 @@ export const ChatContextProvider = ({ children }) => {
             const messagesArray = []
 
             querySnapshot.forEach((doc) => {
+                // doc.data() is never undefined for query doc snapshots
                 console.log(doc.id, " => ", doc.data());
 
                 messagesArray.push(doc.data())
             });
             console.log('messagesArray', messagesArray)
             setMessages(messagesArray)
+
         });
 
     }
